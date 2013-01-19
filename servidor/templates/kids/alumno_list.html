@@ -1,0 +1,12 @@
+{% extends 'kids/base.html' %}
+{% comment %} Lista de alumnos {% endcomment %}
+{% block titulo %}Lista de Alumnos{% endblock %}
+{% block encabezado %}Lista de Alumnos{% endblock %}
+{% block contenido %}
+<ul>
+{% for alumno in alumnos %}
+    <li> <a href="alumnos/edit/{{ alumno.id }}"> {{ alumno.user }} </a><li>
+{% endfor %}
+<ul>
+{% endblock %}
+{% block javascript %}{% endblock %}

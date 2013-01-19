@@ -1,0 +1,14 @@
+{% extends 'kids/base.html' %}
+{% comment %}Alumnos del Salón{% endcomment %}
+{% block titulo %}Alumnos del Salón{% endblock %}
+{% block encabezado %}Alumnos del Salón{% endblock %}
+{% block contenido %}
+<ul>
+{% for alumno in alumnos %}
+	<li>
+	{{ alumno.user }}
+	</li>
+{% endfor %}
+</ul>
+{% endblock %}
+{% block javascript %}{% endblock %}

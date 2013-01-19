@@ -1,0 +1,13 @@
+{% extends 'kids/base.html' %}
+{% comment %} Detalle de Alumno {% endcomment %}
+{% block titulo %}Detalle de Alumno{% endblock %}
+{% block encabezado %}Datos de Alumno{% endblock %}
+{% block contenido %}
+Nombre: {{ alumno.user }}</br>
+Apellidos: {{ alumno.user.user.last_name}}</br>
+Nacimiento: {{ alumno.user.nacimiento }}</br>
+Dirección: {{ alumno.user.direccion}}</br>
+Telefono: {{ alumno.user.celular }}</br>
+<a class="button" href="edit/{{ alumno.id }}"> Editar </a>
+{% endblock %}
+{% block javascript %}{% endblock %}

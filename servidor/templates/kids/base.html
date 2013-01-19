@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+    <meta http-equiv="content-language" content="es">
+    <meta charset="utf-8" name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <title>Operacion 12D.C. - {% block titulo %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/kids.css">
+</head>
+<body {% block iniciar %}{% endblock %}>
+    <header>
+        {% block encabezado %}{% endblock %}
+        <nav>
+            <a class="menu" href="/">Inicio</a>
+            <a class="menu" href="/ingresar">Ingresar</a>
+            <a class="menu" href="/salir">Salir</a>
+        </nav>
+    </header>
+    <section class='contenido'>
+        {% block contenido %}{% endblock %}
+    </section>
+    <footer>
+        <p>Desarrollado por Iglesia "La Palabra y El  Espíritu"</p>
+    {% block javascript %}{% endblock %}
+    </footer>
+</body>
+</html>
+

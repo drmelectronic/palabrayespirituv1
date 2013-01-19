@@ -1,0 +1,17 @@
+{% extends 'kids/base.html' %}
+{% comment %} Editar Perfil {% endcomment %}
+{% block titulo %}Editar Perfil{% endblock %}
+{% block encabezado %}Editar Perfil{% endblock %}
+{% block contenido %}
+<a class="tab" href="/kids/alumnos/edit/{{ alumno.id }}">Detalles</a>
+<a class="tab" href="">Perfil</a>
+<a class="tab" href="/kids/alumnos">Regresar</a>
+<form method="post" action="">
+	{% csrf_token %}
+	<table>
+	{{ form.as_table }}
+	</table>
+	<p><input type="submit" value="Guardar"/></p>
+</form>
+{% endblock %}
+{% block javascript %}{% endblock %}
