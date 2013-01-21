@@ -6,21 +6,11 @@ from main.models import *
 # Create your models here.
 
 
-class Alumno(models.Model):
-    user = models.OneToOneField(UserProfile)
-    apoderado = models.CharField(max_length=64, null=True, default=None)
-    relacion = models.CharField(max_length=16, null=True, default=None)
-    telefono = models.CharField(max_length=10, null=True, default=None)
-    foto = models.ImageField(upload_to='alumnos')
-
-    def unicode(self):
-        return self.user
-
-
 class Salon(models.Model):
     profesor = models.OneToOneField(UserProfile)
     desde = models.PositiveSmallIntegerField()
     hasta = models.PositiveSmallIntegerField()
+    parque = models.BooleanField()
 
     def unicode(self):
         return 'Prof: ' + self.profesor
@@ -40,6 +30,17 @@ class Clase(models.Model):
         return self.nombre
 
 
+class Alumno(models.Model):
+    user = models.OneToOneField(UserProfile)
+    apoderado = models.CharField(max_length=64, null=True, default=None)
+    relacion = models.CharField(max_length=16, null=True, default=None)
+    telefono = models.CharField(max_length=10, null=True, default=None)
+    foto = models.ImageField(upload_to='alumnos')
+
+    def unicode(self):
+        return self.user
+
+
 class Asistencia(models.Model):
     alumno = models.ForeignKey(Alumno)
     dia = models.DateField(auto_now=True)
@@ -47,5 +48,23 @@ class Asistencia(models.Model):
     def unicode(self):
         return self.alumno + ': ' + str(self.dia)
 
+    def puntos(self):
+        contador = 0
+        puntos = self.punto_set.all()
+        for p in puntos:
+            contador += p.motivo.valor
+        return contador
+
     class Meta:
         unique_together = (('alumno', 'dia'),)
+
+
+class PuntoMotivo(models.Model):
+    nombre = models.CharField(max_length=16)
+    valor = models.PositiveSmallIntegerField()
+
+
+class Punto(models.Model):
+    alumno = models.ForeignKey(Alumno)
+    asistencia = models.ForeignKey(Asistencia)
+    motivo = models.ForeignKey(PuntoMotivo)
