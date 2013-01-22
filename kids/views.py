@@ -1,11 +1,10 @@
 # -*- encoding: utf-8 -*-
 from kids.models import *
+from kids.forms import *
 from django.core.urlresolvers import reverse
-from django.http import HttpResponse, HttpResponseRedirect
-from django.views.generic import TemplateView, ListView
-from django.contrib.auth.decorators import login_required
-from django.utils.decorators import method_decorator
-from django.shortcuts import render_to_response, get_object_or_404, redirect
+from django.http import HttpResponseRedirect
+from django.views.generic import ListView, CreateView, FormView
+from django.shortcuts import render_to_response, get_object_or_404
 import datetime
 
 
@@ -39,13 +38,40 @@ def asistencia(request):
 
 
 class SalonAlumnosListView(ListView):
-
     context_object_name = "alumnos"
     template_name = "kids/alumnos_salon.html"
 
     def get_queryset(self):
-        salon = get_object_or_404(Salon, id=self.args[0])
-        alumnos = Alumno.objects.filter(
-            nacimiento__lte=datetime.date.today() - salon.hasta,
-            nacimiento__gte=datetime.date.today() - salon.desde)
+        salon = get_object_or_404(Salon, id=self.kwargs['pk'])
+        alumnos = Alumno.objects.filter(salon=salon)
         return alumnos
+
+
+class AlumnoCreateView(FormView):
+    form_class = AlumnoProfileForm
+    template_name = 'kids/alumno_new.html'
+    success_url = '/kids/alumnos'
+
+    def form_valid(self, form):
+        usuario = User(
+            username=self.cleaned_data['usuario'],
+            first_name=self.cleaned_data['nombres'],
+            last_name=self.cleaned_data['apellidos'],
+            email=self.cleaned_data['email'])
+        usuario.save()
+        profile = UserProfile(
+            user=usuario,
+            direccion=self.cleaned_data['direccion'],
+            celular=self.cleaned_data['celular'],
+            nacimiento=self.cleaned_data['nacimiento'])
+        profile.save()
+        alumno = Alumno(
+            user=profile,
+            apoderado=self.cleaned_data['apoderado'],
+            relacion=self.cleaned_data['relacion'],
+            telefono=self.cleaned_data['telefono'],
+            foto=self.cleaned_data['foto'],
+            salon=self.cleaned_data['salon'],
+            observacion=self.cleaned_data['observacion'])
+        alumno.save()
+        return super(AlumnosCreateView, self).form_valid(form)

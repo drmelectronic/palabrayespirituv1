@@ -3,11 +3,12 @@
 {% block titulo %}Lista de Alumnos{% endblock %}
 {% block encabezado %}Lista de Alumnos{% endblock %}
 {% block contenido %}
-<ul>
-{% for alumno in alumnos %}
-    <li> <a href="alumnos/editar/{{ alumno.id }}"> {{ alumno.user }} </a><li>
-{% endfor %}
-<ul>
-<a href="alumnos/crear">Añadir</a>
+<form method="post" action="">
+	{% csrf_token %}
+	<table>
+	{{ form.as_table }}
+	</table>
+	<p><input type="submit" value="Guardar"/></p>
+</form>
 {% endblock %}
 {% block javascript %}{% endblock %}

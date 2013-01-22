@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, DetailView, UpdateView
 from kids.views import *
 from kids.models import *
 from django.contrib import admin
@@ -17,10 +17,11 @@ urlpatterns = patterns('kids.views',
     url(r'^alumnos/(?P<pk>\d+)$', DetailView.as_view(
         model=Alumno,
         context_object_name="alumno")),
-    url(r'^alumnos/edit/(?P<pk>\d+)$', UpdateView.as_view(
+    url(r'^alumnos/editar/(?P<pk>\d+)$', UpdateView.as_view(
         model=Alumno,
         context_object_name="alumno",
         success_url='/kids/alumnos')),
+    url(r'^alumnos/crear$', AlumnoCreateView.as_view()),
     url(r'^userprofile/(?P<pk>\d+)$', UpdateView.as_view(
         model=UserProfile,
         context_object_name="alumno",

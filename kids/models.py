@@ -7,13 +7,12 @@ from main.models import *
 
 
 class Salon(models.Model):
-    profesor = models.OneToOneField(UserProfile)
     desde = models.PositiveSmallIntegerField()
     hasta = models.PositiveSmallIntegerField()
     parque = models.BooleanField()
 
     def unicode(self):
-        return 'Prof: ' + self.profesor
+        return self.desde + ' - ' + self.hasta
 
 
 class Clase(models.Model):
@@ -30,12 +29,21 @@ class Clase(models.Model):
         return self.nombre
 
 
+class ApoderadoTipo(models.Model):
+    nombre = models.CharField(max_length=16, unique=True)
+
+    def __unicode__(self):
+        return self.nombre
+
+
 class Alumno(models.Model):
     user = models.OneToOneField(UserProfile)
     apoderado = models.CharField(max_length=64, null=True, default=None)
-    relacion = models.CharField(max_length=16, null=True, default=None)
+    relacion = models.ForeignKey(ApoderadoTipo)
     telefono = models.CharField(max_length=10, null=True, default=None)
     foto = models.ImageField(upload_to='alumnos')
+    salon = models.ForeignKey(Salon)
+    observacion = models.CharField(max_length=256, null=True)
 
     def unicode(self):
         return self.user
@@ -44,6 +52,7 @@ class Alumno(models.Model):
 class Asistencia(models.Model):
     alumno = models.ForeignKey(Alumno)
     dia = models.DateField(auto_now=True)
+    profesor = models.ForeignKey(UserProfile)
 
     def unicode(self):
         return self.alumno + ': ' + str(self.dia)
@@ -60,7 +69,7 @@ class Asistencia(models.Model):
 
 
 class PuntoMotivo(models.Model):
-    nombre = models.CharField(max_length=16)
+    nombre = models.CharField(max_length=16, unique=True)
     valor = models.PositiveSmallIntegerField()
 
 
@@ -68,3 +77,4 @@ class Punto(models.Model):
     alumno = models.ForeignKey(Alumno)
     asistencia = models.ForeignKey(Asistencia)
     motivo = models.ForeignKey(PuntoMotivo)
+    profesor = models.ForeignKey(UserProfile)

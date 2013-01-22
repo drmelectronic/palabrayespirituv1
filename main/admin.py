@@ -21,13 +21,12 @@ class AlumnoAdmin(admin.ModelAdmin):
 class SalonAdmin(admin.ModelAdmin):
     fieldsets = [
         (None, {'fields': [
-            'profesor',
             'desde',
             'hasta']
             }
         )
     ]
-    list_display = ('desde', 'hasta', 'profesor')
+    list_display = ('desde', 'hasta')
 
 
 class UserProfileAdmin(admin.ModelAdmin):
