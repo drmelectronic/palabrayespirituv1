@@ -27,8 +27,9 @@ def ingresar(request):
             acceso = authenticate(username=usuario, password=clave)
             if acceso is not None:
                 if acceso.is_active:
+                    success = request.GET['next']
                     login(request, acceso)
-                    return HttpResponseRedirect('/kids/')
+                    return HttpResponseRedirect(success)
                 else:
                     return render_to_response(
                         'main/noactivo.html',

@@ -3,7 +3,7 @@
 {% block titulo %}Lista de Alumnos{% endblock %}
 {% block encabezado %}Lista de Alumnos{% endblock %}
 {% block contenido %}
-<form method="post" action="">
+<form enctype="multipart/form-data" method="post"method="post" action="">
 	{% csrf_token %}
 	<table>
 	{{ form.as_table }}

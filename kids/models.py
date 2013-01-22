@@ -2,6 +2,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from main.models import *
+import datetime
 
 # Create your models here.
 
@@ -11,8 +12,8 @@ class Salon(models.Model):
     hasta = models.PositiveSmallIntegerField()
     parque = models.BooleanField()
 
-    def unicode(self):
-        return self.desde + ' - ' + self.hasta
+    def __unicode__(self):
+        return str(self.desde) + ' - ' + str(self.hasta)
 
 
 class Clase(models.Model):
@@ -25,7 +26,7 @@ class Clase(models.Model):
     palabras = models.CharField(max_length=512)
     historia = models.CharField(max_length=2048)
 
-    def unicode(self):
+    def __unicode__(self):
         return self.nombre
 
 
@@ -43,10 +44,14 @@ class Alumno(models.Model):
     telefono = models.CharField(max_length=10, null=True, default=None)
     foto = models.ImageField(upload_to='alumnos')
     salon = models.ForeignKey(Salon)
-    observacion = models.CharField(max_length=256, null=True)
+    observacion = models.CharField(max_length=256, null=True, blank=True)
 
-    def unicode(self):
+    def __unicode__(self):
         return self.user
+
+    def asistio(self):
+        dia = datetime.date.today()
+        return bool(self.asistencia_set.filter(dia=dia))
 
 
 class Asistencia(models.Model):
@@ -54,7 +59,7 @@ class Asistencia(models.Model):
     dia = models.DateField(auto_now=True)
     profesor = models.ForeignKey(UserProfile)
 
-    def unicode(self):
+    def __unicode__(self):
         return self.alumno + ': ' + str(self.dia)
 
     def puntos(self):

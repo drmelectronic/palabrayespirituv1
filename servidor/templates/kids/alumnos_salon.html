@@ -5,10 +5,17 @@
 {% block contenido %}
 <ul>
 {% for alumno in alumnos %}
-	<li>
-	{{ alumno.user }}
-	</li>
+    <li>
+    <a href="/kids/asistencia?alumno={{alumno.id}}">{{ alumno.user }}
+    </a>
+    {% if alumno.asistio %}
+        Si
+    {% else %}
+        No
+    {% endif %}
+</li>
 {% endfor %}
 </ul>
+<a href="/kids/alumnos/crear">Añadir</a>
 {% endblock %}
 {% block javascript %}{% endblock %}
