@@ -52,6 +52,9 @@ class Alumno(models.Model):
 
     def asistio(self):
         dia = datetime.date.today()
+        w = dia.isoweekday()
+        if w != 7:
+            dia -= datetime.timedelta(w)
         return bool(self.asistencia_set.filter(dia=dia))
 
     def thumb(self):

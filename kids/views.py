@@ -1,6 +1,7 @@
 # -*- encoding: utf-8 -*-
 from kids.models import *
 from kids.forms import *
+from django.template import RequestContext
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 from django.views.generic import ListView, CreateView, FormView
@@ -12,7 +13,7 @@ import datetime
 def salones(request):
     salones = Salon.objects.all()
     return render_to_response('kids/salones.html',
-        {'salones': salones})
+        {'salones': salones}, RequestContext(request))
 
 
 @login_required
@@ -22,14 +23,16 @@ def asistencia(request):
     except:
         return HttpResponseRedirect(reverse('kids.views.salones', args=()))
     else:
+        dia = datetime.date.today()
+        w = dia.isoweekday()
         user = request.user
         profile = user.get_profile()
         alumno = get_object_or_404(Alumno, pk=int(alumno_id))
         asistencia = Asistencia.objects.filter(
             alumno=alumno_id,
-            dia=datetime.date.today(),
+            dia=dia,
         )
-        if len(asistencia) == 0:
+        if len(asistencia) == 0 and w == 7:
             asistencia = Asistencia(alumno=alumno,
                 profesor=profile)
             asistencia.save()
@@ -45,6 +48,14 @@ class SalonAlumnosListView(ListView):
         alumnos = Alumno.objects.filter(salon=salon)
         return alumnos
 
+    def get_context_data(self, **kwargs):
+        context = super(SalonAlumnosListView, self).get_context_data(**kwargs)
+        dia = datetime.date.today()
+        w = dia.isoweekday()
+        if w != 7:
+            dia -= datetime.timedelta(w)
+        context['dia'] = dia
+        return context
 
 class AlumnoCreateView(FormView):
     form_class = AlumnoProfileForm

@@ -3,21 +3,28 @@
 {% block titulo %}Alumnos del Salón{% endblock %}
 {% block encabezado %}Alumnos del Salón{% endblock %}
 {% block contenido %}
-<ul class="alumnos">
+<h2>Asistencia del dia {{ dia }}</h2>
+<table class="alumnos">
 {% for alumno in alumnos %}
-    <li>
-    <img src="{{ alumno.thumb }}" width=50px>
-    <a href="/kids/asistencia?alumno={{alumno.id}}">
-    {{ alumno.user }}
-    </a>
-    {% if alumno.asistio %}
-        Si
-    {% else %}
-        No
-    {% endif %}
-</li>
+    <tr>
+        <td>
+            <img src="{{ alumno.thumb }}" width=50px>
+        </td>
+        <td>
+            <a href="/kids/asistencia?alumno={{alumno.id}}">
+                {{ alumno.user }}
+            </a>
+        </td>
+        <td>
+            {% if alumno.asistio %}
+                Si
+            {% else %}
+                No
+            {% endif %}
+        </td>
+    </tr>
 {% endfor %}
-</ul>
+</table>
 <a href="/kids/alumnos/crear">Añadir</a>
 {% endblock %}
 {% block javascript %}{% endblock %}
