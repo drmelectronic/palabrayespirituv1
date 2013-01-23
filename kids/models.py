@@ -16,6 +16,13 @@ class Salon(models.Model):
     def __unicode__(self):
         return str(self.desde) + ' - ' + str(self.hasta)
 
+    def alumnos(self):
+        nominas = self.nomina_set.all()
+        alumnos = []
+        for n in nominas:
+            alumnos.append(n.alumno)
+        return alumnos
+
 
 class Clase(models.Model):
     nombre = models.CharField(max_length=32)
@@ -44,7 +51,9 @@ class Alumno(models.Model):
     relacion = models.ForeignKey(ApoderadoTipo)
     telefono = models.CharField(max_length=10, null=True, default=None)
     foto = models.ImageField(upload_to='alumnos')
-    salon = models.ForeignKey(Salon)
+    parque = models.BooleanField()
+    ed = models.BooleanField()
+    ingreso = models.DateField()
     observacion = models.CharField(max_length=256, null=True, blank=True)
 
     def __unicode__(self):
@@ -62,6 +71,9 @@ class Alumno(models.Model):
         return p + '.thumb.' + p[-3:]
 
     def save(self):
+        edad = self.edad
+        if edad > 12:
+            return False
         super(Alumno, self).save()
         p = self.foto.path
         image = Image.open(self.foto)
@@ -76,6 +88,31 @@ class Alumno(models.Model):
         image = image.resize(size, Image.ANTIALIAS)
         image.save(p)
         thumbnail.save(p + '.thumb.' + p[-3:])
+        salones = Salon.objects.all()
+        if self.parque:
+            for s in salones:
+                if s.desde <= edad and edad <= s.hasta and s.parque:
+                    salon = s
+            nomina = Nomina(
+                alumno=self,
+                salon=salon)
+            nomina.save()
+        if self.ed:
+            for s in salones:
+                if s.desde <= edad and edad <= s.hasta and not s.parque:
+                    salon = s
+            nomina = Nomina(
+                alumno=self,
+                salon=salon)
+            nomina.save()
+
+
+class Nomina(models.Model):
+    alumno = models.ForeignKey(Alumno)
+    salon = models.ForeignKey(Salon)
+
+    class Meta:
+        unique_together = (('alumno', 'salon'),)
 
 
 class Asistencia(models.Model):

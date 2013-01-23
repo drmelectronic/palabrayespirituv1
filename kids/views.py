@@ -23,7 +23,13 @@ def asistencia(request):
     except:
         return HttpResponseRedirect(reverse('kids.views.salones', args=()))
     else:
-        dia = datetime.date.today()
+        diahora = datetime.datetime.now()
+        dia = diahora.date()
+        hora = diahora.time()
+        if hora > datetime.time(12, 0, 0):
+            parque = False
+        else:
+            parque = True
         w = dia.isoweekday()
         user = request.user
         profile = user.get_profile()
@@ -31,12 +37,19 @@ def asistencia(request):
         asistencia = Asistencia.objects.filter(
             alumno=alumno_id,
             dia=dia,
+            parque=parque
         )
+        salones = alumno.salon_set.all()
+        for s in salones:
+            if parque == s.parque:
+                salon = s
         if len(asistencia) == 0 and w == 7:
-            asistencia = Asistencia(alumno=alumno,
-                profesor=profile)
+            asistencia = Asistencia(
+                alumno=alumno,
+                profesor=profile,
+                parque=parque)
             asistencia.save()
-        return HttpResponseRedirect('/kids/salon/' + str(alumno.salon.id))
+        return HttpResponseRedirect('/kids/salon/' + str(salon.id))
 
 
 class SalonAlumnosListView(ListView):
@@ -45,7 +58,7 @@ class SalonAlumnosListView(ListView):
 
     def get_queryset(self):
         salon = get_object_or_404(Salon, id=self.kwargs['pk'])
-        alumnos = Alumno.objects.filter(salon=salon)
+        alumnos = salon.alumnos
         return alumnos
 
     def get_context_data(self, **kwargs):
