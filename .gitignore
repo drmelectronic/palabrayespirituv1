@@ -10,3 +10,4 @@ servidor/media/*.png
 servidor/media/*.gif
 servidor/media/*.PNG
 servidor/media/*.GIF
+servidor/media/*.thumb

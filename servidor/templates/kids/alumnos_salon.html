@@ -3,10 +3,10 @@
 {% block titulo %}Alumnos del Salón{% endblock %}
 {% block encabezado %}Alumnos del Salón{% endblock %}
 {% block contenido %}
-<ul>
+<ul class="alumnos">
 {% for alumno in alumnos %}
     <li>
-    <img src="/media/{{ alumno.foto}}" width=50px>
+    <img src="{{ alumno.thumb }}" width=50px>
     <a href="/kids/asistencia?alumno={{alumno.id}}">
     {{ alumno.user }}
     </a>

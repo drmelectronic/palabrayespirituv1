@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # -*- encoding: utf-8 -*-
 from kids.models import *
 from kids.forms import *
@@ -32,16 +30,10 @@ def asistencia(request):
             dia=datetime.date.today(),
         )
         if len(asistencia) == 0:
-            template_name = 'kids/asistencia.html'
             asistencia = Asistencia(alumno=alumno,
                 profesor=profile)
             asistencia.save()
-        else:
-            template_name = 'kids/ya-registrado.html'
-        return render_to_response(
-            template_name,
-            {'alumno': alumno}
-            )
+        return HttpResponseRedirect('/kids/salon/' + str(alumno.salon.id))
 
 
 class SalonAlumnosListView(ListView):
@@ -83,4 +75,3 @@ class AlumnoCreateView(FormView):
         alumno.save()
         self.success_url = '/kids/salon/' + str(alumno.salon.id)
         return super(AlumnoCreateView, self).form_valid(form)
->>>>>>> 3d0d89047ecd3da4b752b602f33b7d15ece1c86d

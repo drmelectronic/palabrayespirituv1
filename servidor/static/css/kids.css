@@ -1,0 +1,38 @@
+footer{
+	background: rgba(0, 200, 10, 0.6);
+	background: -webkit-gradient(top, #4C4648);
+	font-size: 0.8em;
+	padding: 0.2em;
+}
+
+header{	
+	background: rgba(0, 50, 256, 0.6);
+	padding: 0.5em;
+	font-size: 2em;
+}
+header a{
+	font-size: 0.5em;
+}
+	
+.menu{
+	display: inline;
+	color: #DDDD22;
+	width: 100px;
+	padding: 4px 14px;
+	margin: 2px;
+	background: rgba(200, 50, 10, 0.8);
+	background: -webkit-gradient(top, #4C4648);
+	border: solid 1px #FFFFFF;
+	border-radius: 10px;
+	-webkit-box-shadow: 0 5px 15px -1px #000000;
+	-text-shadow: 0 1px 0 #4C4648;
+	text-decoration: none;
+}
+
+ul.alumnos{
+	list-style-type: none;
+}
+ul.alumnos img{
+	display: inline;
+	vertical-align: middle;
+}
