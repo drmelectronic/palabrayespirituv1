@@ -11,6 +11,7 @@ daniel = User.objects.get(id=1)
 daniel.username = "daniel"
 daniel.first_name = "Daniel"
 daniel.last_name = "Robles Martínez"
+daniel.last_name = "drm.electronic@gmail.com"
 daniel.save()
 try:
     pamela = User.objects.get(username='pamela')

@@ -26,7 +26,10 @@ def ingresar(request):
             acceso = authenticate(username=usuario, password=clave)
             if acceso is not None:
                 if acceso.is_active:
-                    success = request.GET['next']
+                    try:
+                        success = request.GET['next']
+                    except:
+                        success = '/'
                     login(request, acceso)
                     return HttpResponseRedirect(success)
                 else:

@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from main.models import *
 import datetime
 from PIL import Image
+import os
 
 # Create your models here.
 
@@ -38,6 +39,10 @@ class Clase(models.Model):
         return self.nombre
 
 
+class Profesor(models.Model):
+    profile = models.OneToOneField(UserProfile)
+
+
 class ApoderadoTipo(models.Model):
     nombre = models.CharField(max_length=16, unique=True)
 
@@ -46,14 +51,14 @@ class ApoderadoTipo(models.Model):
 
 
 class Alumno(models.Model):
-    user = models.OneToOneField(UserProfile)
+    profile = models.OneToOneField(UserProfile)
     apoderado = models.CharField(max_length=64, null=True, default=None)
     relacion = models.ForeignKey(ApoderadoTipo)
     telefono = models.CharField(max_length=10, null=True, default=None)
     foto = models.ImageField(upload_to='alumnos')
     parque = models.BooleanField()
     ed = models.BooleanField()
-    ingreso = models.DateField()
+    ingreso = models.DateField(auto_now=True)
     observacion = models.CharField(max_length=256, null=True, blank=True)
 
     def __unicode__(self):
@@ -68,15 +73,35 @@ class Alumno(models.Model):
 
     def thumb(self):
         p = self.foto.url
-        return p + '.thumb.' + p[-3:]
+        raiz = p[:-4]
+        return raiz + '-thumb.' + p[-3:]
+
+    def edad(self):
+        h = datetime.date.today()
+        n = self.profile.nacimiento
+        i = -1
+        while n < h:
+            n = datetime.date(n.year + 1, n.month, n.day)
+            i += 1
+        return i
 
     def save(self):
-        edad = self.edad
-        if edad > 12:
-            return False
         super(Alumno, self).save()
-        p = self.foto.path
         image = Image.open(self.foto)
+        p = self.foto.path
+        p_ant = p
+        e = os.path.splitext(p)[1]
+        if 'j' in e or 'J' in e:
+            e = '.jpg'
+        elif 'n' in e or 'N' in e:
+            e = '.png'
+        elif 'i' in e or 'I' in e:
+            e = '.gif'
+        nombre = str(self.id)
+        b = os.path.split(p)[0]
+        p = '%s/%s%s' % (b, nombre, e)
+        url = str(self.foto)
+        url = os.path.split(url)[0] + '/' + nombre + e
         (width, height) = image.size
         "Max width and height 800"
         fx = 800. / width
@@ -87,8 +112,9 @@ class Alumno(models.Model):
         thumbnail = image.resize(thumb_size, Image.ANTIALIAS)
         image = image.resize(size, Image.ANTIALIAS)
         image.save(p)
-        thumbnail.save(p + '.thumb.' + p[-3:])
+        thumbnail.save(b + '/' + nombre + '-thumb' + e)
         salones = Salon.objects.all()
+        edad = self.edad()
         if self.parque:
             for s in salones:
                 if s.desde <= edad and edad <= s.hasta and s.parque:
@@ -105,6 +131,9 @@ class Alumno(models.Model):
                 alumno=self,
                 salon=salon)
             nomina.save()
+        self.foto = url
+        os.remove(p_ant)
+        super(Alumno, self).save()
 
 
 class Nomina(models.Model):
@@ -119,6 +148,7 @@ class Asistencia(models.Model):
     alumno = models.ForeignKey(Alumno)
     dia = models.DateField(auto_now=True)
     profesor = models.ForeignKey(UserProfile)
+    parque = models.BooleanField()
 
     def __unicode__(self):
         return self.alumno + ': ' + str(self.dia)

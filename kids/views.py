@@ -39,16 +39,20 @@ def asistencia(request):
             dia=dia,
             parque=parque
         )
-        salones = alumno.salon_set.all()
-        for s in salones:
-            if parque == s.parque:
-                salon = s
+        nomina = alumno.nomina_set.all()
+        for n in nomina:
+            if parque == n.salon.parque:
+                salon = n.salon
         if len(asistencia) == 0 and w == 7:
             asistencia = Asistencia(
                 alumno=alumno,
                 profesor=profile,
                 parque=parque)
             asistencia.save()
+        elif w != 7:
+            return render_to_response('kids/error.html',
+            {'error': 'No puede registrar asistencia si no es Domingo.'},
+            RequestContext(request))
         return HttpResponseRedirect('/kids/salon/' + str(salon.id))
 
 
@@ -70,32 +74,51 @@ class SalonAlumnosListView(ListView):
         context['dia'] = dia
         return context
 
+
 class AlumnoCreateView(FormView):
     form_class = AlumnoProfileForm
     template_name = 'kids/alumno_new.html'
     success_url = '/kids/alumnos'
 
     def form_valid(self, form):
-        usuario = User(
-            username=form.cleaned_data['usuario'],
-            first_name=form.cleaned_data['nombres'],
-            last_name=form.cleaned_data['apellidos'],
-            email=form.cleaned_data['email'])
-        usuario.save()
-        profile = UserProfile(
-            user=usuario,
-            direccion=form.cleaned_data['direccion'],
-            celular=form.cleaned_data['celular'],
-            nacimiento=form.cleaned_data['nacimiento'])
-        profile.save()
-        alumno = Alumno(
-            user=profile,
-            apoderado=form.cleaned_data['apoderado'],
-            relacion=form.cleaned_data['relacion'],
-            telefono=form.cleaned_data['telefono'],
-            foto=form.cleaned_data['foto'],
-            salon=form.cleaned_data['salon'],
-            observacion=form.cleaned_data['observacion'])
-        alumno.save()
-        self.success_url = '/kids/salon/' + str(alumno.salon.id)
+        diahora = datetime.datetime.now()
+        hoy = diahora.date()
+        limite = datetime.date(hoy.year - 12, hoy.month, hoy.day)
+        if form.cleaned_data['nacimiento'] > limite:
+            usuario = User(
+                username=form.cleaned_data['usuario'],
+                first_name=form.cleaned_data['nombres'],
+                last_name=form.cleaned_data['apellidos'],
+                email=form.cleaned_data['email'])
+            usuario.save()
+            profile = UserProfile(
+                user=usuario,
+                direccion=form.cleaned_data['direccion'],
+                celular=form.cleaned_data['celular'],
+                nacimiento=form.cleaned_data['nacimiento'])
+            profile.save()
+            alumno = Alumno(
+                profile=profile,
+                apoderado=form.cleaned_data['apoderado'],
+                relacion=form.cleaned_data['relacion'],
+                telefono=form.cleaned_data['telefono'],
+                parque=form.cleaned_data['parque'],
+                ed=form.cleaned_data['ed'],
+                foto=form.cleaned_data['foto'],
+                observacion=form.cleaned_data['observacion'])
+            alumno.save()
+            hora = diahora.time()
+            if hora > datetime.time(12, 0, 0):
+                parque = False
+            else:
+                parque = True
+            nominas = alumno.nomina_set.all()
+            salon_id = None
+            for n in nominas:
+                if parque == n.salon.parque:
+                    salon_id = str(n.salon.id)
+            if salon_id is None:
+                self.success_url = '/'
+            else:
+                self.success_url = '/kids/salon/' + str(salon_id)
         return super(AlumnoCreateView, self).form_valid(form)

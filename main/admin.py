@@ -7,7 +7,7 @@ from kids.models import *
 class AlumnoAdmin(admin.ModelAdmin):
     fieldsets = [
         (None, {'fields': [
-            'user',
+            'profile',
             'apoderado',
             'relacion',
             'telefono',
@@ -15,7 +15,7 @@ class AlumnoAdmin(admin.ModelAdmin):
             }
         )
     ]
-    list_display = ('user', 'telefono',)
+    list_display = ('profile', 'telefono',)
 
 
 class SalonAdmin(admin.ModelAdmin):

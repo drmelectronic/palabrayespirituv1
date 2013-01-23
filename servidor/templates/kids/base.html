@@ -8,7 +8,7 @@
 </head>
 <body {% block iniciar %}{% endblock %}>
     <header>
-        {% block encabezado %}{% endblock %}
+        Ministerio de Niños Operacion 12D.C.
         <nav>
             <a class="menu" href="/">Inicio</a>
             <a class="menu" href="/ingresar">Ingresar</a>
@@ -17,6 +17,7 @@
         </nav>
     </header>
     <section class='contenido'>
+        <h2>{% block encabezado %}{% endblock %}</h2>
         {% block contenido %}{% endblock %}
     </section>
     <footer>

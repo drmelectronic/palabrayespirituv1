@@ -1,0 +1,10 @@
+{% extends 'kids/base.html' %}
+{% comment %} Error {% endcomment %}
+{% block titulo %}Error{% endblock %}
+{% block encabezado %}Que extraño hubo un error.{% endblock %}
+{% block contenido %}
+<h3>Revise esto, puede ser la razón:</h3>
+¡¡¡¡  {{ error }} !!!!
+<p>De lo contrario infórmenos a webmaster@palabrayespiritu.org</p>
+{% endblock %}
+{% block javascript %}{% endblock %}

@@ -3,11 +3,22 @@
 {% block titulo %}Lista de Alumnos{% endblock %}
 {% block encabezado %}Lista de Alumnos{% endblock %}
 {% block contenido %}
-<ul>
+<table class="alumnos">
 {% for alumno in alumnos %}
-    <li> <a href="alumnos/editar/{{ alumno.id }}"> {{ alumno.user }} </a><li>
+    <tr>
+        <td>
+            <a href="/kids/alumnos/editar/{{alumno.id}}">
+                <img src="{{ alumno.thumb }}" width=50px>
+            </a>
+        </td>
+        <td>
+            <a href="/kids/alumnos/editar/{{alumno.id}}">
+                {{ alumno.profile }}
+            </a>
+        </td>
+    </tr>
 {% endfor %}
-<ul>
+</table>
 <a href="alumnos/crear">Añadir</a>
 {% endblock %}
 {% block javascript %}{% endblock %}
