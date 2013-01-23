@@ -17,7 +17,8 @@ class AlumnoProfileForm(forms.Form):
         empty_label=None,
         required=False)
     telefono = forms.CharField(max_length=10, required=False)
-    foto = forms.ImageField(required=False)
+    foto = forms.ImageField(required=False,
+        )
     salon = forms.ModelChoiceField(
         Salon.objects.all(),
         empty_label=None,

@@ -4,3 +4,5 @@
 local_settings.py
 settings.py
 *.nja
+*.jpg
+servidor/media/alumnos/*.JPG
