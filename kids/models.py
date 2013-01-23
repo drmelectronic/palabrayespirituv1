@@ -42,7 +42,8 @@ class Alumno(models.Model):
     apoderado = models.CharField(max_length=64, null=True, default=None)
     relacion = models.ForeignKey(ApoderadoTipo)
     telefono = models.CharField(max_length=10, null=True, default=None)
-    foto = models.ImageField(upload_to='alumnos')
+    foto = models.ImageField(upload_to='alumnos',
+        width=200)
     salon = models.ForeignKey(Salon)
     observacion = models.CharField(max_length=256, null=True, blank=True)
 

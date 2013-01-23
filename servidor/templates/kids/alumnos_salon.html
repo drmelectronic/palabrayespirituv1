@@ -6,7 +6,9 @@
 <ul>
 {% for alumno in alumnos %}
     <li>
-    <a href="/kids/asistencia?alumno={{alumno.id}}">{{ alumno.user }}
+    <img src="/media/{{ alumno.foto}}" width=50px>
+    <a href="/kids/asistencia?alumno={{alumno.id}}">
+    {{ alumno.user }}
     </a>
     {% if alumno.asistio %}
         Si

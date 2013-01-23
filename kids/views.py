@@ -79,4 +79,5 @@ class AlumnoCreateView(FormView):
             salon=form.cleaned_data['salon'],
             observacion=form.cleaned_data['observacion'])
         alumno.save()
+        self.success_url = '/kids/salon/' + str(alumno.salon.id)
         return super(AlumnoCreateView, self).form_valid(form)

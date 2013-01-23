@@ -13,8 +13,7 @@ from django.contrib.auth import login, authenticate, logout
 
 def index(request):
     """Muestra una lista de Clientes"""
-    return HttpResponse('Hola inicio'
-    )
+    return HttpResponseRedirect('/kids')
 
 
 def ingresar(request):
