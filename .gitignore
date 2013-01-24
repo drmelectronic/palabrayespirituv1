@@ -4,7 +4,8 @@
 local_settings.py
 settings.py
 *.nja
-*media*.jpg
-*media*.png
-*media*.gif
-*media*.thumb
+servidor/media/*/*.jpg
+servidor/media/*/*.png
+servidor/media/*/*.gif
+servidor/media/*/*.thumb
+
