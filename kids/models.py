@@ -62,7 +62,7 @@ class Alumno(models.Model):
     observacion = models.CharField(max_length=256, null=True, blank=True)
 
     def __unicode__(self):
-        return self.user
+        return self.profile.nombre()
 
     def asistio(self):
         dia = datetime.date.today()
@@ -70,6 +70,17 @@ class Alumno(models.Model):
         if w != 7:
             dia -= datetime.timedelta(w)
         return bool(self.asistencia_set.filter(dia=dia))
+
+    def asistencia(self):
+        dia = datetime.date.today()
+        w = dia.isoweekday()
+        if w != 7:
+            dia -= datetime.timedelta(w)
+        return self.asistencia_set.get(dia=dia)
+
+    def puntos(self):
+        asistencia = self.asistencia()
+        return asistencia.puntos()
 
     def thumb(self):
         p = self.foto.url
@@ -151,7 +162,7 @@ class Asistencia(models.Model):
     parque = models.BooleanField()
 
     def __unicode__(self):
-        return self.alumno + ': ' + str(self.dia)
+        return str(self.alumno) + ': ' + str(self.dia)
 
     def puntos(self):
         contador = 0
@@ -168,9 +179,11 @@ class PuntoMotivo(models.Model):
     nombre = models.CharField(max_length=16, unique=True)
     valor = models.PositiveSmallIntegerField()
 
+    def __unicode__(self):
+        return self.nombre
+
 
 class Punto(models.Model):
-    alumno = models.ForeignKey(Alumno)
     asistencia = models.ForeignKey(Asistencia)
     motivo = models.ForeignKey(PuntoMotivo)
     profesor = models.ForeignKey(UserProfile)

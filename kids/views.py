@@ -49,11 +49,38 @@ def asistencia(request):
                 profesor=profile,
                 parque=parque)
             asistencia.save()
+            motivo = PuntoMotivo.objects.get(id=1)
+            punto = Punto(
+                asistencia=asistencia,
+                motivo=motivo,
+                profesor=profile)
+            punto.save()
         elif w != 7:
             return render_to_response('kids/error.html',
             {'error': 'No puede registrar asistencia si no es Domingo.'},
             RequestContext(request))
         return HttpResponseRedirect('/kids/salon/' + str(salon.id))
+
+
+@login_required
+def punto(request):
+    try:
+        asistencia_id = request.GET['asistencia']
+        asistencia = get_object_or_404(Asistencia, id=asistencia_id)
+        success = request.GET['next']
+        motivo_id = request.POST['motivo']
+        motivo = get_object_or_404(PuntoMotivo, id=motivo_id)
+        profesor = request.user.get_profile()
+    except:
+        erorr = 3 + 'c'
+        return HttpResponseRedirect(success)
+    else:
+        punto = Punto(
+            asistencia=asistencia,
+            motivo=motivo,
+            profesor=profesor)
+        punto.save()
+        return HttpResponseRedirect(success)
 
 
 class SalonAlumnosListView(ListView):
@@ -72,6 +99,9 @@ class SalonAlumnosListView(ListView):
         if w != 7:
             dia -= datetime.timedelta(w)
         context['dia'] = dia
+        motivos = PuntoMotivo.objects.all()[1:]
+        context['motivos'] = motivos
+        context['salon'] = self.kwargs['pk']
         return context
 
 

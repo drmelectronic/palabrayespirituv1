@@ -28,5 +28,6 @@ urlpatterns = patterns('kids.views',
         success_url='/kids/alumnos/',
         template_name='kids/userprofile_form.html')),
     url(r'^salon/(?P<pk>\d+)$', SalonAlumnosListView.as_view()),
+    url(r'^punto$', 'punto'),
     url(r'^admin/', include(admin.site.urls)),
 )
