@@ -22,7 +22,7 @@ from reportlab.lib.units import cm
 from reportlab.lib import utils
 import reportlab.rl_config
 reportlab.rl_config.warnOnMissingFontGlyphs = 0
-ruta = '/home/econain/Django/palabrayespiritu/servidor/'
+ruta = '/home/Django/palabrayespiritu/servidor/'
 ruta_fonts = ruta + 'static/fonts/'
 pdfmetrics.registerFont(TTFont('PatrickHand',
     ruta_fonts + 'PatrickHand-Regular.ttf'))
