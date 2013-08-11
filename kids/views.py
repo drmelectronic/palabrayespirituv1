@@ -4,10 +4,11 @@ from kids.forms import *
 from django.template import RequestContext
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
-from django.views.generic import ListView, CreateView, FormView
+from django.views.generic import ListView, CreateView, FormView, UpdateView
 from django.shortcuts import render_to_response, get_object_or_404
 from django.contrib.auth.decorators import login_required
 import datetime
+from kids.pdf import *
 
 
 def salones(request):
@@ -107,7 +108,7 @@ class SalonAlumnosListView(ListView):
 
 class AlumnoCreateView(FormView):
     form_class = AlumnoProfileForm
-    template_name = 'kids/alumno_new.html'
+    template_name = 'kids/view_new.html'
     success_url = '/kids/alumnos'
 
     def form_valid(self, form):
@@ -152,3 +153,30 @@ class AlumnoCreateView(FormView):
             else:
                 self.success_url = '/kids/salon/' + str(salon_id)
         return super(AlumnoCreateView, self).form_valid(form)
+
+
+
+class ClaseCreateView(CreateView):
+    form_class = ClaseForm
+    template_name = 'kids/view_new.html'
+    success_url = '/kids/clases'
+
+    def form_valid(self, form):
+        out = super(ClaseCreateView, self).form_valid(form)
+        instance = form.instance
+        Guia(instance)
+        return out
+
+class ClaseUpdateView(UpdateView):    
+    model = Clase
+    form_class = ClaseForm
+    context_object_name = "clase"
+    success_url = '/kids/clases'
+
+    def form_valid(self, form):
+        out = super(ClaseUpdateView, self).form_valid(form)
+        form.save()
+        instance = form.instance
+        t = instance.preguntas
+        Guia(instance)
+        return out

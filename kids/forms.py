@@ -23,3 +23,21 @@ class AlumnoProfileForm(forms.Form):
         )
     observacion = forms.CharField(max_length=256, required=False,
         widget=forms.Textarea)
+
+
+class ClaseForm(forms.ModelForm):
+
+    def __init__(self, *args, **kwargs):
+        super(ClaseForm, self).__init__(*args, **kwargs)
+        self.fields['versiculo'].widget = forms.Textarea()
+        self.fields['memorizar'].widget = forms.Textarea()
+        self.fields['ejercicios'].widget = forms.Textarea()
+        self.fields['preguntas'].widget = forms.Textarea()
+        self.fields['historia'].widget = forms.Textarea()
+        self.fields['bosquejo'].widget = forms.Textarea()
+        self.fields['temas'].widget = forms.Textarea()
+        self.fields['verdad'].widget = forms.Textarea()
+       
+    class Meta:
+        model = Clase
+

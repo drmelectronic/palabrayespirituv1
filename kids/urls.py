@@ -22,6 +22,14 @@ urlpatterns = patterns('kids.views',
         context_object_name="alumno",
         success_url='/kids/alumnos')),
     url(r'^alumnos/crear$', AlumnoCreateView.as_view()),
+    url(r'^clases$', ListView.as_view(
+        model=Clase,
+        context_object_name="clases")),
+    url(r'^clases/(?P<pk>\d+)$', DetailView.as_view(
+        model=Clase,
+        context_object_name="clase")),
+    url(r'^clases/editar/(?P<pk>\d+)$', ClaseUpdateView.as_view()),
+    url(r'^clases/crear$', ClaseCreateView.as_view()),
     url(r'^userprofile/(?P<pk>\d+)$', UpdateView.as_view(
         model=UserProfile,
         context_object_name="alumno",

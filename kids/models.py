@@ -26,14 +26,17 @@ class Salon(models.Model):
 
 
 class Clase(models.Model):
+    orden = models.PositiveSmallIntegerField()
     nombre = models.CharField(max_length=32)
     versiculo = models.CharField(max_length=256)
-    cita = models.CharField(max_length=32)
+    bosquejo = models.CharField(max_length=1024 * 8)
+    temas = models.CharField(max_length=1024)
+    memorizar = models.CharField(max_length=256)
     ejercicios = models.CharField(max_length=1024)
-    imagen = models.ImageField(upload_to='colorear')
+    imagen = models.ImageField(upload_to='kids/colorear/')
     preguntas = models.CharField(max_length=1024)
-    palabras = models.CharField(max_length=512)
-    historia = models.CharField(max_length=2048)
+    historia = models.CharField(max_length=2048, blank=True, null=True)
+    verdad = models.CharField(max_length=256)
 
     def __unicode__(self):
         return self.nombre
