@@ -199,7 +199,6 @@ class Guia(BaseDocTemplate):
             A4[0] - (2 * self.MARGEN), 1 * cm,
             id='cabecera', showBoundary=self.mostrar)
         story = []
-        print self.header
         story.append(Paragraph(self.header, self.estilos['cabecera']))
         origen.addFromList(story, canvas)
         canvas.line(x1=self.MARGEN, y1=A4[1] - 1.2 * cm,
@@ -207,7 +206,6 @@ class Guia(BaseDocTemplate):
 
     def formato(self, canvas, doc):
         canvas.saveState()
-        print 'formato'
         self.cabecera(canvas)
         canvas.restoreState()
 
@@ -273,7 +271,6 @@ class Pupiletras(object):
 
     def resize(self, size):
         """Enlarges the puzzle."""
-        print "Resizing to %d x %d\n" % (size, size)
         #add rows, sometime at the beginning, sometimes at the end
         if random.random() > 0.5:
             for row in range(len(self.c), size):
@@ -298,7 +295,6 @@ class Pupiletras(object):
             self.tries = 0  # counter increased by self.fits
             w = unicode(word.replace(' ', '')).upper()
             self.add_word(w)
-            print "Adding %s ... \t%d tries\n" % (word, self.tries)
 
     def add_word(self, word):
         while True:
@@ -400,10 +396,8 @@ class Pupiletras(object):
         """Puts a word in the jigsaw. Throws all errors. Use fits()
         before calling this."""
         r, c = row, col
-        print 'PUT', word
         for char in word:
             self.c[r][c] = char
-            print char
             r += rd
             c += cd
         #self.words.append(word.lower())
@@ -411,7 +405,6 @@ class Pupiletras(object):
 
     def fill(self):
         """Add random letters to the puzzle."""
-        print "filling puzzle...\n"
         size = len(self.options.RANDOM_LETTERS)
         for row in range(len(self.c)):
             for col in range(len(self.c[row])):
@@ -428,11 +421,6 @@ class Pupiletras(object):
                 try:
                     result += col + ' '
                 except:
-                    print 'Error:', col
-                    print row
-                    print self.c
-                    import pdb
-                    pdb.set_trace()
                     raise
             result += '\n'
         return result
@@ -442,7 +430,6 @@ class Pupiletras(object):
         for word in sys.argv[1:]:
             if word.startswith("-"):
                 if word in ["-h", "--help"]:
-                    print(__doc__)
                     sys.exit(0)
                 elif word == "--silent":
                     self.options.VERBOSE = False
@@ -453,13 +440,10 @@ class Pupiletras(object):
                 elif word == "--append":
                     self.options.MODE = "a"
                 else:
-                    print("Unknown option: " + word)
                     sys.exit(1)
             else:
                 words.append(word)
         if not words:
-            print("No words specified. (You can send words as parameters).")
-            print("Type some words (blank to proceed)")
             word = "true"
             while word:
                 word = raw_input()
