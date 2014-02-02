@@ -57,7 +57,7 @@ class Guia(BaseDocTemplate):
                 alignment=TA_JUSTIFY,
                 fontName='PatrickHand',
                 fontSize=12,
-                leading=18,
+                leading=17,
                 firstLineIndent=20,
                 ),
             'pregunta': ParagraphStyle(name='pregunta',
@@ -118,7 +118,7 @@ class Guia(BaseDocTemplate):
         a4 = A4
         margen = self.MARGEN
         frameDatos = Frame(self.MARGEN * 2, self.MARGEN,
-            A4[0] - 4 * self.MARGEN, A4[1] - 5 * self.MARGEN,
+            A4[0] - 4 * self.MARGEN, A4[1] - 4 * self.MARGEN,
             id='datos', showBoundary=self.mostrar)
         height = frameDatos.height
         template = PageTemplate('pagina_normal', [frameDatos],
