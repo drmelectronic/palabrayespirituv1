@@ -41,6 +41,9 @@ class Clase(models.Model):
     def __unicode__(self):
         return self.nombre
 
+    class Meta:
+        ordering = ['orden',]
+
 
 class Profesor(models.Model):
     profile = models.OneToOneField(UserProfile)
