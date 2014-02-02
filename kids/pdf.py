@@ -137,10 +137,6 @@ class Guia(BaseDocTemplate):
         estilo = 'texto'
         for linea in instance.bosquejo.splitlines():
             self.insertar(linea, estilo)
-            if estilo == 'texto':
-                estilo = 'versiculo'
-            else:
-                estilo = 'texto'
         self.insertar('Temas', 'subtitulo')
         for linea in instance.temas.splitlines():
             self.insertar('- ' + linea, 'texto')
