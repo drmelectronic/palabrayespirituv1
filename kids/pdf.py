@@ -160,7 +160,7 @@ class Guia(BaseDocTemplate):
         img = utils.ImageReader(url)
         iw, ih = img.getSize()
         aspect = ih / float(iw)
-        resta = int(height) - alto
+        resta = int(height) - alto - 5
         logo = Image(url, width=(resta / aspect), height=resta)
         self.story.append(logo)
         logo.hAlign = 'CENTER'
