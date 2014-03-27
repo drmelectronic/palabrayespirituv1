@@ -30,6 +30,7 @@ urlpatterns = patterns('kids.views',
         context_object_name="clase")),
     url(r'^clases/editar/(?P<pk>\d+)$', ClaseUpdateView.as_view()),
     url(r'^clases/crear$', ClaseCreateView.as_view()),
+    url(r'^clases/compartir/(?P<pk>\d+)$', compartir),
     url(r'^userprofile/(?P<pk>\d+)$', UpdateView.as_view(
         model=UserProfile,
         context_object_name="alumno",

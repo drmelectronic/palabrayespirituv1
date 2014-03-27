@@ -1,0 +1,1232 @@
+[
+{
+    "pk": 1, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "permission", 
+        "name": "permission", 
+        "app_label": "auth"
+    }
+},
+{
+    "pk": 2, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "group", 
+        "name": "group", 
+        "app_label": "auth"
+    }
+},
+{
+    "pk": 3, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "user", 
+        "name": "user", 
+        "app_label": "auth"
+    }
+},
+{
+    "pk": 4, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "contenttype", 
+        "name": "content type", 
+        "app_label": "contenttypes"
+    }
+},
+{
+    "pk": 5, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "session", 
+        "name": "session", 
+        "app_label": "sessions"
+    }
+},
+{
+    "pk": 6, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "site", 
+        "name": "site", 
+        "app_label": "sites"
+    }
+},
+{
+    "pk": 7, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "logentry", 
+        "name": "log entry", 
+        "app_label": "admin"
+    }
+},
+{
+    "pk": 8, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "userprofile", 
+        "name": "user profile", 
+        "app_label": "main"
+    }
+},
+{
+    "pk": 9, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "salon", 
+        "name": "salon", 
+        "app_label": "kids"
+    }
+},
+{
+    "pk": 10, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "clase", 
+        "name": "clase", 
+        "app_label": "kids"
+    }
+},
+{
+    "pk": 11, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "profesor", 
+        "name": "profesor", 
+        "app_label": "kids"
+    }
+},
+{
+    "pk": 12, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "apoderadotipo", 
+        "name": "apoderado tipo", 
+        "app_label": "kids"
+    }
+},
+{
+    "pk": 13, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "alumno", 
+        "name": "alumno", 
+        "app_label": "kids"
+    }
+},
+{
+    "pk": 14, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "nomina", 
+        "name": "nomina", 
+        "app_label": "kids"
+    }
+},
+{
+    "pk": 15, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "asistencia", 
+        "name": "asistencia", 
+        "app_label": "kids"
+    }
+},
+{
+    "pk": 16, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "puntomotivo", 
+        "name": "punto motivo", 
+        "app_label": "kids"
+    }
+},
+{
+    "pk": 17, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "punto", 
+        "name": "punto", 
+        "app_label": "kids"
+    }
+},
+{
+    "pk": "i4xqiaq5saec96tzmjiyn6am9rt5gxj6", 
+    "model": "sessions.session", 
+    "fields": {
+        "expire_date": "2014-03-09T14:52:44.902Z", 
+        "session_data": "YzEyODhhOWY4YzcwOThjNTIxMTkxYTVjYjk3Y2NhMzAwYWZiYmRiMzqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZFUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmRxAlUNX2F1dGhfdXNlcl9pZEsBdS4="
+    }
+},
+{
+    "pk": "n7lu0h2j5a80zh8yd26r7v8gmyrxl9se", 
+    "model": "sessions.session", 
+    "fields": {
+        "expire_date": "2013-08-25T04:50:34.294Z", 
+        "session_data": "MjhkY2JiZDU5ZGUxZjJkYzU4MDU2ZWRlOTQ2ZjRmNGZhOTVkMmQ4ZjqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQRLAXUu"
+    }
+},
+{
+    "pk": "njfgyci36bbdggbn0v2m51n1ihscr8us", 
+    "model": "sessions.session", 
+    "fields": {
+        "expire_date": "2014-03-09T14:50:38.086Z", 
+        "session_data": "MjhkY2JiZDU5ZGUxZjJkYzU4MDU2ZWRlOTQ2ZjRmNGZhOTVkMmQ4ZjqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQRLAXUu"
+    }
+},
+{
+    "pk": "q39guqs5pnmn5cx3n51mfqlpjkb84hjr", 
+    "model": "sessions.session", 
+    "fields": {
+        "expire_date": "2014-04-09T17:18:54.888Z", 
+        "session_data": "MjhkY2JiZDU5ZGUxZjJkYzU4MDU2ZWRlOTQ2ZjRmNGZhOTVkMmQ4ZjqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQRLAXUu"
+    }
+},
+{
+    "pk": 1, 
+    "model": "sites.site", 
+    "fields": {
+        "domain": "example.com", 
+        "name": "example.com"
+    }
+},
+{
+    "pk": 1, 
+    "model": "kids.salon", 
+    "fields": {
+        "hasta": 2, 
+        "parque": true, 
+        "desde": 0
+    }
+},
+{
+    "pk": 2, 
+    "model": "kids.salon", 
+    "fields": {
+        "hasta": 5, 
+        "parque": true, 
+        "desde": 3
+    }
+},
+{
+    "pk": 3, 
+    "model": "kids.salon", 
+    "fields": {
+        "hasta": 7, 
+        "parque": true, 
+        "desde": 6
+    }
+},
+{
+    "pk": 4, 
+    "model": "kids.salon", 
+    "fields": {
+        "hasta": 9, 
+        "parque": true, 
+        "desde": 8
+    }
+},
+{
+    "pk": 5, 
+    "model": "kids.salon", 
+    "fields": {
+        "hasta": 12, 
+        "parque": true, 
+        "desde": 10
+    }
+},
+{
+    "pk": 6, 
+    "model": "kids.salon", 
+    "fields": {
+        "hasta": 6, 
+        "parque": false, 
+        "desde": 0
+    }
+},
+{
+    "pk": 7, 
+    "model": "kids.salon", 
+    "fields": {
+        "hasta": 12, 
+        "parque": false, 
+        "desde": 7
+    }
+},
+{
+    "pk": 1, 
+    "model": "kids.clase", 
+    "fields": {
+        "orden": 5, 
+        "memorizar": "Pero el que beba del agua que yo le dar\u00e9, no volver\u00e1 a tener sed jam\u00e1s.\r\nJuan 4:14a", 
+        "preguntas": "\u00bfPorqu\u00e9 la samaritana se sorprendi\u00f3 que Jes\u00fas le ped\u00eda agua?\r\n\u00bfA qu\u00e9 se refer\u00eda Jes\u00fas que si bebiere del Agua Viva \"no tendr\u00e1 sed jam\u00e1s\"?\r\n\u00bfC\u00f3mo debemos adorar nosotros?\r\n\u00bfPorqu\u00e9 Jes\u00fas no quer\u00eda comer?", 
+        "versiculo": "Juan 4:1-42", 
+        "temas": "Jes\u00fas es el agua viva. Teniendo su palabra no tendremos necesidad de nada m\u00e1s.\r\nDebemos adorarle en Esp\u00edritu y en Verdad, los samaritanos adoraban lo que no conoc\u00edan, los jud\u00edos lo que si conoc\u00edan pero no en esp\u00edritu. Ahora tenemos que adorar conociendo a Dios, a su Palabra, y en Esp\u00edritu porque nuestro esp\u00edritu ha sido nacido de nuevo para poder adorarle.\r\nNuestra comida es hacer la voluntad de Dios.", 
+        "historia": "Jes\u00fas yendo a Galilea pas\u00f3 por <Samaria>. Se sent\u00f3 junto a un <pozo>. Vino una mujer de Samaria a sacar <agua> y Jes\u00fas le dijo:- Dame de <beber> (La mujer se sorprende que un jud\u00edo le <hable>). Si supieras quien soy, t\u00fa me pedir\u00edas agua <viva>. La mujer le pregunta: - \u00bfEres t\u00fa mayor que Jacob?\r\n- Cualquiera que bebe esta agua volver\u00e1 a tener sed. Pero si bebe de mi agua no tendr\u00e1 sed jam\u00e1s, ser\u00e1 en \u00e9l una fuente de agua para vida <eterna>....\r\n- Se\u00f1or, creo que t\u00fa eres <profeta>. Donde tenemos que adorar, aqu\u00ed o en <Jerusal\u00e9n>.\r\n- Ya es hora que los verdaderos adoradores adorar\u00e1n al Padre en <Esp\u00edritu> y en Verdad.\r\n- S\u00e9 que el <Mes\u00edas> va a venir, y \u00e9l nos dir\u00e1 todas esas cosas. Jes\u00fas le respondi\u00f3: - Yo soy.\r\nLlegaron sus <disc\u00edpulos> y le rogaban para que Jes\u00fas comiera, pero Jes\u00fas les dijo: Mi comida es hacer la <voluntad> de mi padre y terminar su obra. Alcen sus ojos y miren las tierras, porque ya est\u00e1n listas para la <cosecha>. Y muchos samaritanos <creyeron> por causa de la mujer.", 
+        "bosquejo": "Jes\u00fas dej\u00f3 Judea y se fue a Galilea, y era necesario pasar por Samaria, aunque los jud\u00edos rodeaban la ciudad para no juntarse con los Samaritanos.\r\nJes\u00fas se sent\u00f3 junto a un pozo. Vino una mujer de Samaria a sacar agua y Jes\u00fas le dice:\r\n- Dame de beber. (porque sus disc\u00edpulos hab\u00edan ido a la ciudad a comprar de comer)\r\nLa Samaritana se asombra de que un jud\u00edo le hable, Jes\u00fas le responde:\r\n- Si supieras quien soy, t\u00fa me pedir\u00edas agua viva.\r\n- Eres t\u00fa mayor que Jacob que hizo este pozo?\r\n- Cualquiera que bebe esta agua volver\u00e1 a tener sed. Pero si bebe de mi agua no tendr\u00e1 sed jam\u00e1s, ser\u00e1 en \u00e9l una fuente de agua para vida eterna.\r\n- Se\u00f1or, dame esa agua.\r\n- Ve y llama a tu marido.\r\n- No tengo marido\r\n- Bien has dicho. Porque cinco maridos has tenido, y el que ahora tienes no es tu marido.\r\n- Se\u00f1or, creo que t\u00fa eres profeta. Donde tenemos que adorar, en este monte o en Jerusal\u00e9n.\r\n- En Jerusal\u00e9n, pero ya es hora que los verdaderos adoradores adorar\u00e1n al Padre en Esp\u00edritu y en Verdad.\r\n- S\u00e9 que el Mes\u00edas va a venir, y \u00e9l nos dir\u00e1 todas esas cosas.\r\n- Yo soy.\r\nLlegaron sus disc\u00edpulos asombrados de que hablaba con una samaritana, pero nadie se atrevi\u00f3 a preguntarle. La mujer dejo su c\u00e1ntaro y fue a la ciudad y llam\u00f3 a la gente. Sus disc\u00edpulos le rogaban para que Jes\u00fas comiera, pero Jes\u00fas les dijo: Tengo otra comida, mi comida es hacer la voluntad de mi padre y terminar su obra. Alcen sus ojos y miren las tierras, porque ya est\u00e1n listas para la cosecha.\r\nY muchos samaritanos creyeron por causa de la mujer.\r\nLos samaritanos le rogaron a Jes\u00fas que se quede all\u00ed, y se qued\u00f3 dos d\u00edas. y creyeron mucho m\u00e1s.", 
+        "verdad": "Jes\u00fas es el agua viva. Teniendo su palabra no tendremos necesidad de nada m\u00e1s.", 
+        "ejercicios": "Yo tengo a Jes\u00fas, el agua viva, y no me falta nada.\r\nYo adoro a Dios con mi Esp\u00edritu.\r\nYo conozco la Palabra de Dios, por eso le adoro.\r\nYo hago la voluntad de Dios.", 
+        "nombre": "La Mujer Samaritana", 
+        "imagen": "kids/colorear/image.4MXAAX.png"
+    }
+},
+{
+    "pk": 2, 
+    "model": "kids.clase", 
+    "fields": {
+        "orden": 1, 
+        "memorizar": "El que no nace de nuevo no puede ver el Reino de Dios.\r\nJuan 3:3", 
+        "preguntas": "\u00bfQu\u00e9 simboliza el Templo?\r\n\u00bfQu\u00e9 fiesta estaban por celebrar?\r\n\u00bfPor qu\u00e9 Jes\u00fas bot\u00f3 a los vendedores del Templo?\r\n\u00bfA qu\u00e9 se refer\u00eda Jes\u00fas con reconstruir el templo en tres d\u00edas?", 
+        "versiculo": "El que no nace de nuevo no puede ver el Reino de Dios.\r\nJuan 3:3", 
+        "temas": "Tengo la vida de Dios en m\u00ed.\r\nYo practico la verdad.", 
+        "historia": "Estaba cerca la ________, y subi\u00f3 a Jerusal\u00e9n, y hall\u00f3 en el <templo> a los que <vendian>, Los jud\u00edos le <pidieron> una se\u00f1al, y les dijo: \u201c<destruyan> este templo y  d\u00edas lo levantar\u00e9\u201d", 
+        "bosquejo": "Soy el templo de Dios.\r\nYo soy limpiado por la palabra de Dios.\r\nPuedo ver las cosas del Reino de Dios.\r\nTengo la vida de Dios en m\u00ed.\r\nYo practico la verdad.", 
+        "verdad": "Qu\u00e9 simboliza el Templo", 
+        "ejercicios": "Soy el templo de Dios.\r\nYo soy limpiado por la palabra de Dios.\r\nPuedo ver las cosas del Reino de Dios.\r\nTengo la vida de Dios en m\u00ed.\r\nYo practico la verdad.", 
+        "nombre": "Jes\u00fas Purifica el Templo", 
+        "imagen": "kids/colorear/Captura_de_pantalla_de_2012-12-12_093507_1.png"
+    }
+},
+{
+    "pk": 3, 
+    "model": "kids.clase", 
+    "fields": {
+        "orden": 2, 
+        "memorizar": "Por tanto, sobrellevaos los unos a los otros,como tambi\u00e9n Cristo nos sobrellev\u00f3, para gloria de Dios.\r\nRomanos 15:7", 
+        "preguntas": "\u00bfQui\u00e9nes llevaron a un paral\u00edtico a Jes\u00fas?\r\n\u00bfPor qu\u00e9 descubrieron el techo?\r\n\u00bfQu\u00e9 vio Jes\u00fas en ellos?\r\n\u00bfPuedes hacer lo mismo por tus amigos?", 
+        "versiculo": "Marcos 2:1-12", 
+        "temas": "Podemos ayudar a nuestros amigos con nuestra fe.\r\nSin fe es imposible agradar a Dios.\r\nLa sanidad de Dios est\u00e1 disponible en nosotros siempre. \r\nDios ve y le agrada nuestra fe.", 
+        "historia": "Lleg\u00f3 Jes\u00fas otra vez a <Capernaum> y estaba en su <casa>.Se juntaron muchas personas y no cab\u00edan en la puerta, \u00c9l les predicaba.\r\nTrajeron un <paral\u00edtico>, tra\u00eddo por <cuatro>, y como no pod\u00edan llegar a Jes\u00fas, <descubrieron> el techo donde estaba y bajaron el <lecho> del paral\u00edtico.\r\nJes\u00fas vio la fe de ellos y le dijo al paral\u00edtico: Tus <pecados> te son perdonados.\r\nUnos <escribas> que estaban all\u00ed sentados dec\u00edan: S\u00f3lo Dios puede perdonar pecados.\r\nJes\u00fas les dijo: El hijo del hombre tiene potestad para perdonar pecados.\r\nAl paral\u00edtico le dijo: <Lev\u00e1ntate>, toma tu lecho y vete a tu casa.\r\nEl paral\u00edtico se levant\u00f3, tom\u00f3 su lecho, sali\u00f3 delante de todos y todos se asombraron y <glorificaron> a Dios, diciendo: Nunca tal hemos visto.", 
+        "bosquejo": "Lleg\u00f3 Jes\u00fas otra vez a Capernaum y se oy\u00f3 que estaba en su casa.Se juntaron muchas personas y no cab\u00edan en la puerta, \u00c9l les predicaba.\r\n\r\nEntonces trajeron un paral\u00edtico, tra\u00eddo por cuatro, y como no pod\u00edan llegar a Jes\u00fas, descubrieron el techo donde estaba y bajaron el lecho del paral\u00edtico.\r\n\r\nJes\u00fas vio la fe de ellos y le dijo al paral\u00edtico: Tus pecados te son perdonados.\r\n\r\nUnos escribas que estaban all\u00ed sentados dec\u00edan \u00bfpor qu\u00e9 habla as\u00ed? S\u00f3lo Dios puede perdonar pecados.\r\n\r\nJes\u00fas les dijo: \u00bfqu\u00e9 es m\u00e1s f\u00e1cil decirle: Tus pecados te son perdonados o Lev\u00e1ntate, toma tu lecho y anda.El hijo del hombre tiene potestad para perdonar pecados.\r\n\r\nAl paral\u00edtico le dijo: Lev\u00e1ntate, toma tu lecho y vete a tu casa.\r\n\r\nEl paral\u00edtico se levant\u00f3, tom\u00f3 su lecho, sali\u00f3 delante de todos y todos se asombraron y glorificaron a Dios, diciendo: Nunca tal hemos visto.\r\n", 
+        "verdad": "Podemos usar nuestra fe para sobrellevar las cargas de nuestros amigos y apoyarlos.", 
+        "ejercicios": "Yo oro por mis amigos.\r\nYo tengo fe para creer por mis amigos.\r\nYo amo a mis amigos y les predico.\r\nJes\u00fas sana a mis amigos.", 
+        "nombre": "Jes\u00fas Sana A Un Paral\u00edtico", 
+        "imagen": "kids/colorear/paralitico.jpg"
+    }
+},
+{
+    "pk": 4, 
+    "model": "kids.clase", 
+    "fields": {
+        "orden": 7, 
+        "memorizar": "Echa sobre el SE\u00d1OR tu carga, y \u00c9l te sustentar\u00e1; \u00c9l nunca permitir\u00e1 que el justo sea sacudido.\r\nSalmos 55:22", 
+        "preguntas": "\u00bfCu\u00e1l era la costumbre el d\u00eda de reposo?\r\n\u00bfRealmente estaba prohibido trabajar?\r\n\u00bfDebemos preocuparnos por alg\u00fan problema?\r\n\u00bfCu\u00e1ntos d\u00edas a la semana nos puede ayudar Dios?", 
+        "versiculo": "Mateo 12:9 \"!Pues una persona vale mucho m\u00e1s que una oveja\u00a1 Por eso est\u00e1 permitido hacer el bien en el d\u00eda de reposo.", 
+        "temas": "Antes hab\u00eda un d\u00eda para descansar de nuestras obras y dedicarlo a Dios.\r\n\r\nDesde que Jes\u00fas empez\u00f3 su ministerio ya no tenemos necesidad de esperar un d\u00eda especial para expresar que confiamos en Dios.\r\n\r\nJes\u00fas nunca desobedeci\u00f3 la ley, pero conoc\u00eda m\u00e1s y sabia que no era una prohibici\u00f3n.\r\n\r\nTodos los d\u00edas son de reposo y podemos recibir ayuda de El.\r\n\r\nEs bueno dedicar un d\u00eda o m\u00e1s para ejercitarnos en recibir de Dios.", 
+        "historia": "hfg\r\nkjg\r\ny", 
+        "bosquejo": "El pueblo de Israel estaba atrapado en sus costumbres y los fariseos se dedicaban a buscar faltas en Jes\u00fas.\r\n\r\nEl d\u00eda de reposo no deb\u00edan de trabajar para recordar que Dios era quien los sustentaba.\r\n\r\nUn s\u00e1bado, Jes\u00fas y sus disc\u00edpulos pasaban por un campo, y estos teniendo hambre arrancaron espigas para comer el grano.\r\n\r\nlos fariseos vieron eso y reclamaron a Jes\u00fas: \"est\u00e1 prohibido hacer eso en el d\u00eda de reposo\".\r\n\r\nJes\u00fas les cito la biblia el ejemplo de David. Tambi\u00e9n que los sacerdotes trabajan el d\u00eda de reposo y nadie los acusa.\r\n\r\nJes\u00fas entr\u00f3 a la sinagoga y encontr\u00f3 un hombre con la mano tullida.\r\n\r\nLos fariseos se adelantaron y le preguntaron: \"Est\u00e1 permitido sanar a una persona en el d\u00eda de reposo?\".\r\n\r\nJes\u00fas les respondi\u00f3 que si ellos rescataban a su oveja del pozo ese d\u00eda, con mayor raz\u00f3n estaba permitido hacer el bien el d\u00eda de reposo.\r\n\r\nEntonces Jes\u00fas le dijo al hombre de la mano tullida: \"Extiende tu mano\", el hombre la extendi\u00f3 y quedo sano. ", 
+        "verdad": "fg\r\nuu\r\nuuu", 
+        "ejercicios": "Soy muy importante para Dios.\r\nYo conf\u00edo siempre que Dios me sustenta.\r\nTodos los d\u00edas son buenos para recibir bendiciones de Dios.\r\nDios quiere bendecir a las personas por medio de m\u00ed.\r\n\r\n\r\n", 
+        "nombre": "Jesus y el dia de reposo", 
+        "imagen": "kids/colorear/Image1.jpg"
+    }
+},
+{
+    "pk": 5, 
+    "model": "kids.clase", 
+    "fields": {
+        "orden": 3, 
+        "memorizar": "Echa sobre el SE\u00d1OR tu carga, y \u00c9l te sustentar\u00e1; \u00c9l nunca permitir\u00e1 que el justo sea sacudido.\r\nSalmos 55:22\r\n", 
+        "preguntas": "\u00bfCu\u00e1l era la costumbre el d\u00eda de reposo?\r\n\u00bfRealmente estaba prohibido trabajar?\r\n\u00bfDebemos preocuparnos por alg\u00fan problema?\r\n\u00bfCu\u00e1ntos d\u00edas a la semana nos puede ayudar Dios?\r\n", 
+        "versiculo": "Lucas cap. 6", 
+        "temas": "Antes hab\u00eda un d\u00eda para descansar de nuestras obras y dedicarlo a Dios.\r\nDesde que Jes\u00fas empez\u00f3 su ministerio ya no tenemos necesidad de esperar un d\u00eda especial para expresar que confiamos en Dios.\r\nJes\u00fas nunca desobedeci\u00f3 la ley, pero conoc\u00eda m\u00e1s y sabia que no era una prohibici\u00f3n.\r\nTodos los d\u00edas son de reposo y podemos recibir ayuda de El.\r\nEs bueno dedicar un d\u00eda o m\u00e1s para ejercitarnos en recibir de Dios.", 
+        "historia": "Jes\u00fas pasaba con sus <disc\u00edpulos> por un campo y como tuvieron hambre <arrancaban> y com\u00edan las espigas. Los fariseos dijeron: en el d\u00eda de <reposo> no est\u00e1 permitido hacer eso. Jes\u00fas les explico que una persona con hambre es m\u00e1s <importante> Cuando entr\u00f3 a la <sinagoga> encontr\u00f3 a un hombre con la mano <tullida>, los fariseos esperaban que Jes\u00fas haga algo para sanarlo y as\u00ed poder <acusarlo>, pero \u00e9l pregunto si \u00bfest\u00e1 permitido <salvar> una vida o destruirla en d\u00eda de reposo?; luego solamente le dio una orden al hombre: \" <extiende> tu mano\", el hombre obedeci\u00f3 y quedo sano.", 
+        "bosquejo": "El pueblo de Israel estaba atrapado en sus costumbres y los fariseos se dedicaban a buscar faltas en Jes\u00fas.\r\n\r\nEl d\u00eda de reposo no deb\u00edan trabajar para recordar que Dios era quien los sustentaba.\r\n\r\nUn s\u00e1bado, Jes\u00fas y sus disc\u00edpulos pasaban por un campo, y estos teniendo hambre arrancaron espigas para comer el grano.\r\n\r\nlos fariseos vieron eso y reclamaron a Jes\u00fas: \"est\u00e1 prohibido hacer eso en el d\u00eda de reposo\".\r\n\r\nJes\u00fas les cito la biblia el ejemplo de David. Tambi\u00e9n que los sacerdotes trabajan el d\u00eda de reposo y nadie los acusa.\r\n\r\nJes\u00fas entr\u00f3 a la sinagoga y encontr\u00f3 un hombre con la mano tullida.\r\n\r\nLos fariseos estaban atentos para ver si Jes\u00fas lo sanaba y as\u00ed poder acusarlo.\r\n\r\nJes\u00fas se adelanto y les pregunt\u00f3: \u00bfes l\u00edcito en el d\u00eda de reposo hacer bien o hacer mal; salvar una vida o destruirla?\"\r\n\r\nDespu\u00e9s de mirarlos a todos a su alrededor, dijo al hombre: Extiende tu mano. Y \u00e9l lo hizo as\u00ed, y su mano qued\u00f3 sana.", 
+        "verdad": "\r\n\r\n\r\n\r\n\r\n\r\n\r\n.\r\n\r\n", 
+        "ejercicios": "Soy muy importante para Dios.\r\nYo conf\u00edo siempre que Dios me sustenta.\r\nTodos los d\u00edas son buenos para recibir bendiciones de Dios.\r\nDios quiere bendecir a las personas por medio de m\u00ed.\r\n", 
+        "nombre": "Jes\u00fas y el d\u00eda de reposo", 
+        "imagen": "kids/colorear/Image1_3.jpg"
+    }
+},
+{
+    "pk": 6, 
+    "model": "kids.clase", 
+    "fields": {
+        "orden": 8, 
+        "memorizar": "Echa sobre el SE\u00d1OR tu carga, y \u00c9l te sustentar\u00e1; \u00c9l nunca permitir\u00e1 que el justo sea sacudido.\r\nSalmos 55:22\r\n", 
+        "preguntas": "\u00bfCu\u00e1l era la costumbre el d\u00eda de reposo?\r\n\u00bfRealmente estaba prohibido trabajar?\r\n\u00bfDebemos preocuparnos por alg\u00fan problema?\r\n\u00bfCu\u00e1ntos d\u00edas a la semana nos puede ayudar Dios?\r\n", 
+        "versiculo": "Lucas cap. 6", 
+        "temas": "Antes hab\u00eda un d\u00eda para descansar de nuestras obras y dedicarlo a Dios.\r\nDesde que Jes\u00fas empez\u00f3 su ministerio ya no tenemos necesidad de esperar un d\u00eda especial para expresar que      confiamos en Dios.\r\nJes\u00fas nunca desobedeci\u00f3 la ley, pero conoc\u00eda m\u00e1s y sab\u00eda que no era una prohibici\u00f3n.\r\nTodos los d\u00edas son de reposo y podemos recibir ayuda de El.\r\nEs bueno dedicar un d\u00eda o m\u00e1s para ejercitarnos en recibir de Dios.\r\n", 
+        "historia": "Jes\u00fas pasaba con sus <disc\u00edpulos> por un campo y como tuvieron hambre <arrancaban> y com\u00edan las espigas. Los fariseos dijeron: en el d\u00eda de <reposo> no est\u00e1 permitido hacer eso. Jes\u00fas les explico que una persona con hambre es m\u00e1s <importante> Cuando entr\u00f3 a la <sinagoga> encontr\u00f3 a un hombre con la mano <tullida>, los fariseos esperaban que Jes\u00fas haga algo para sanarlo y as\u00ed poder <acusarlo>, pero \u00e9l pregunto si \u00bfest\u00e1 permitido <salvar> una vida o destruirla en d\u00eda de reposo?; luego solamente le dio una orden al hombre: \" <extiende> tu mano\", el hombre obedeci\u00f3 y quedo sano.", 
+        "bosquejo": "El pueblo de Israel estaba atrapado en sus costumbres y los fariseos se dedicaban a buscar faltas en Jes\u00fas.\r\n\r\nEl d\u00eda de reposo no deb\u00edan trabajar para recordar que Dios era quien los sustentaba.\r\n\r\nUn s\u00e1bado, Jes\u00fas y sus disc\u00edpulos pasaban por un campo.\r\n\r\nEstos teniendo hambre arrancaron espigas para comer el grano.\r\n\r\nlos fariseos vieron eso y reclamaron a Jes\u00fas: \"est\u00e1 prohibido hacer eso en el d\u00eda de reposo\".\r\n\r\nJes\u00fas les cito la biblia el ejemplo de David. Tambi\u00e9n que los sacerdotes trabajan el d\u00eda de reposo y nadie los acusa.\r\n\r\nJes\u00fas entr\u00f3 a la sinagoga y encontr\u00f3 un hombre con la mano tullida.\r\n\r\nLos fariseos estaban atentos para ver si Jes\u00fas lo sanaba y as\u00ed poder acusarlo.\r\n\r\nJes\u00fas se adelant\u00f3 y les pregunt\u00f3: \u00bfes l\u00edcito en el d\u00eda de reposo hacer bien o hacer mal; salvar una vida o destruirla?\"\r\n\r\nDespu\u00e9s de mirarlos a todos a su alrededor, dijo al hombre: Extiende tu mano. Y \u00e9l lo hizo as\u00ed, y su mano qued\u00f3 sana.\r\n", 
+        "verdad": ".", 
+        "ejercicios": "Soy muy importante para Dios.\r\nYo conf\u00edo siempre que Dios me sustenta.\r\nTodos los d\u00edas son buenos para recibir bendiciones de Dios.\r\nDios quiere bendecir a las personas por medio de m\u00ed.\r\n", 
+        "nombre": "Jesus y el d\u00eda de reposo", 
+        "imagen": "kids/colorear/Image1_4.jpg"
+    }
+},
+{
+    "pk": 7, 
+    "model": "kids.clase", 
+    "fields": {
+        "orden": 10, 
+        "memorizar": "\"Gozaos y alegraos, porque vuestro galard\u00f3n es grande en los cielos\" Mateo 5:12", 
+        "preguntas": "\u00bfDe qu\u00e9 forma daba esperanza Jes\u00fas?\r\n\u00bfPorqu\u00e9 debemos trabajar?\r\n\u00bfPara qu\u00e9 son las bendiciones de Dios?\r\n\u00bfPorque debemos estar alegres y gozarnos?", 
+        "versiculo": "Mt 5:1-12", 
+        "temas": "Debemos alegrarnos porque Dios siempre est\u00e1 con nosotros.\r\nTodo lo que hacemos es bendecido por Dios.", 
+        "historia": "1 Cuando Jes\u00fas vio a tanta gente, subi\u00f3 a una montana y se sent\u00f3. Los disc\u00edpulos se le acercaron,\r\n2 y \u00e9l comenz\u00f3 a ensenarles:\r\n3 \u00abDios bendice a los que conf\u00edan\r\ntotalmente en \u00e9l,\r\npues ellos forman parte de su reino.\r\n4 Dios bendice a los que sufren,\r\npues \u00e9l los consolar\u00e1.\r\n5 Dios bendice a los humildes,\r\npues ellos recibir\u00e1n la tierra prometida.\r\n6 Dios bendice a los que desean la justicia,\r\npues \u00e9l les cumplir\u00e1 su deseo.\r\n7 Dios bendice a los que son compasivos,\r\npues \u00e9l ser\u00e1 compasivo con ellos.\r\n8 Dios bendice a los que tienen\r\nun coraz\u00f3n puro,\r\npues ellos ver\u00e1n a Dios.\r\n9 Dios bendice a los que trabajan\r\npara que haya paz en el mundo,\r\npues ellos ser\u00e1n llamados hijos de Dios.\r\n10 Dios bendice a los que son maltratados\r\npor practicar la justicia,\r\npues ellos forman parte de su reino.\r\n11-12 Dios los bendecir\u00e1 a ustedes cuando, por causa m\u00eda, la gente los maltrate y diga mentiras contra ustedes. \u00a1Al\u00e9grense! \u00a1P\u00f3nganse contentos! Porque van a recibir un gran premio en el cielo. As\u00ed maltrataron tambi\u00e9n a los profetas que vivieron antes que ustedes.", 
+        "bosquejo": "Jes\u00fas vio que se acercaba mucha gente y subi\u00f3 al monte a ensenar.\r\nComienza dando esperanza a los que no la tienen anunciando que Dios los va a bendecir a pesar de su condici\u00f3n.\r\nLuego bendice a los que tienen alguna meta o trabajo para Dios.\r\nTermina bendiciendo a los que lo siguen lo apoyan en el ministerio sin temor a ser perseguidos.", 
+        "verdad": "Dios nos bendice en todo momento porque somos sus hijos y buscamos a paz para los dem\u00e1s", 
+        "ejercicios": "Yo soy bendecido por Dios en todo\r\nDios tiene un plan para m\u00ed\r\nEstoy alegre porque tengo un premio de Dios para m\u00ed\r\nYo trabajo para Dios y busco su paz", 
+        "nombre": "Las Bienaventuranzas", 
+        "imagen": "kids/colorear/imagen_ninos.jpg"
+    }
+},
+{
+    "pk": 8, 
+    "model": "kids.clase", 
+    "fields": {
+        "orden": 11, 
+        "memorizar": "\"Gozaos y alegraos, porque vuestro galard\u00f3n es grande en los cielos\" Mateo 5:12", 
+        "preguntas": "\u00bfDe qu\u00e9 forma daba esperanza Jes\u00fas?\r\n\u00bfPorqu\u00e9 debemos trabajar?\r\n\u00bfPara qu\u00e9 son las bendiciones de Dios?\r\n\u00bfPorque debemos estar alegres y gozarnos?", 
+        "versiculo": "Mt 5:1-12", 
+        "temas": "Debemos alegrarnos porque Dios siempre est\u00e1 con nosotros.\r\nTodo lo que hacemos es bendecido por Dios.", 
+        "historia": "bendecido justicia humilde monte reino cielos alegre gozo", 
+        "bosquejo": "Jes\u00fas vio que se acercaba mucha gente y subi\u00f3 al monte a ensenar. Comienza dando esperanza a los que no la tienen anunciando que Dios los va a bendecir a pesar de su condici\u00f3n. Luego bendice a los que tienen alguna meta o trabajo para Dios. Termina bendiciendo a los que lo siguen lo apoyan en el ministerio sin temor a ser perseguidos.", 
+        "verdad": "Dios nos bendice en todo momento porque somos sus hijos y buscamos a paz para los dem\u00e1s", 
+        "ejercicios": "Yo soy bendecido por Dios en todo\r\nDios tiene un plan para m\u00ed\r\nEstoy alegre porque tengo un premio de Dios para m\u00ed\r\nYo trabajo para Dios y busco su paz", 
+        "nombre": "Las Bienaventuranzas", 
+        "imagen": "kids/colorear/imagen_ninos_1.jpg"
+    }
+},
+{
+    "pk": 9, 
+    "model": "kids.clase", 
+    "fields": {
+        "orden": 9, 
+        "memorizar": "\"Gozaos y alegraos, porque vuestro galard\u00f3n es grande en los cielos\" Mateo 5:12", 
+        "preguntas": "\u00bfDe qu\u00e9 forma daba esperanza Jes\u00fas?\r\n\u00bfPorqu\u00e9 debemos trabajar?\r\n\u00bfPara qu\u00e9 son las bendiciones de Dios?\r\n\u00bfPorque debemos estar alegres y gozarnos?", 
+        "versiculo": "Mt 5:1-12", 
+        "temas": "Debemos alegrarnos porque Dios siempre est\u00e1 con nosotros.\r\nTodo lo que hacemos es bendecido por Dios.", 
+        "historia": "1 Cuando Jes\u00fas vio a tanta gente, subi\u00f3 a un <monte> y se sent\u00f3. Los disc\u00edpulos se le acercaron, 2 y \u00e9l comenz\u00f3 a ensenarles:\r\n3 \u00abDios bendice a los que \"confian\"\r\ntotalmente en \u00e9l,\r\npues ellos forman parte de su reino.\r\n4 Dios bendice a los que sufren,\r\npues \u00e9l los (consolar\u00e1).\r\n5 Dios bendice a los humildes,\r\npues ellos recibir\u00e1n la tierra prometida.\r\n6 Dios bendice a los que desean la {justicia},\r\npues \u00e9l les cumplir\u00e1 su deseo.\r\n7 Dios bendice a los que son compasivos,\r\npues \u00e9l ser\u00e1 compasivo con ellos.\r\n8 Dios bendice a los que tienen\r\nun <coraz\u00f3n> puro,\r\npues ellos ver\u00e1n a Dios.\r\n9 Dios bendice a los que trabajan\r\npara que haya paz en el mundo,\r\npues ellos ser\u00e1n llamados -hijos- de Dios.\r\n10 Dios bendice a los que son maltratados\r\npor practicar la justicia,\r\npues ellos forman parte de su reino.\r\n11-12 \u00bbDios los bendecir\u00e1 a ustedes cuando, por causa m\u00eda, la gente los maltrate y diga mentiras contra ustedes. \u00a1Al\u00e9grense! \u00a1P\u00f3nganse contentos! Porque van a recibir un gran premio en el cielo. As\u00ed maltrataron tambi\u00e9n a los _profetas_ que vivieron antes que ustedes.", 
+        "bosquejo": "Jes\u00fas vio que se acercaba mucha gente y subi\u00f3 al monte a ensenar. Comienza dando esperanza a los que no la tienen anunciando que Dios los va a bendecir a pesar de su condici\u00f3n. Luego bendice a los que tienen alguna meta o trabajo para Dios. Termina bendiciendo a los que lo siguen lo apoyan en el ministerio sin temor a ser perseguidos.", 
+        "verdad": "Dios nos bendice en todo momento porque somos sus hijos y buscamos a paz para los dem\u00e1s", 
+        "ejercicios": "Yo soy bendecido por Dios en todo\r\nDios tiene un plan para m\u00ed\r\nEstoy alegre porque tengo un premio de Dios para m\u00ed\r\nYo trabajo para Dios y busco su paz", 
+        "nombre": "Las Bienaventuranzas", 
+        "imagen": "kids/colorear/imagen_ninos_2.jpg"
+    }
+},
+{
+    "pk": 10, 
+    "model": "kids.clase", 
+    "fields": {
+        "orden": 4, 
+        "memorizar": "\"Gozaos y alegraos, porque vuestro galard\u00f3n es grande en los cielos\" Mateo 5:12", 
+        "preguntas": "\u00bfDe qu\u00e9 forma daba esperanza Jes\u00fas?\r\n\u00bfPorqu\u00e9 debemos trabajar?\r\n\u00bfPara qu\u00e9 son las bendiciones de Dios?\r\n\u00bfPorque debemos estar alegres y gozarnos?", 
+        "versiculo": "Mt 5:1-12", 
+        "temas": "Debemos alegrarnos porque Dios siempre est\u00e1 con nosotros.\r\nTodo lo que hacemos es bendecido por Dios.", 
+        "historia": "1 Cuando Jes\u00fas vio a tanta gente, subi\u00f3 a un <monte> y se sent\u00f3. Los disc\u00edpulos se le acercaron, 2 y \u00e9l comenz\u00f3 a ensenarles: 3 Dios bendice a los que <confian> totalmente en \u00e9l, pues ellos forman parte de su reino. 4 Dios bendice a los que sufren, pues \u00e9l los <consolara>. 5 Dios bendice a los humildes, pues ellos recibir\u00e1n la tierra prometida. 6 Dios bendice a los que desean la <justicia>, pues \u00e9l les cumplir\u00e1 su deseo. 7 Dios bendice a los que son compasivos, pues \u00e9l ser\u00e1 compasivo con ellos. 8 Dios bendice a los que tienen un <corazon> puro, pues ellos ver\u00e1n a Dios. 9 Dios bendice a los que trabajan para que haya paz en el mundo, pues ellos ser\u00e1n llamados <hijos> de Dios. 10 Dios bendice a los que son maltratados por practicar la justicia,\r\npues ellos forman parte de su reino. 11-12 Dios los bendecir\u00e1 a ustedes cuando, por causa m\u00eda, la gente los maltrate y diga mentiras contra ustedes. <alegrense> \u00a1P\u00f3nganse contentos! Porque van a recibir un gran premio en el cielo. As\u00ed maltrataron tambi\u00e9n a los <profetas> que vivieron antes que ustedes.", 
+        "bosquejo": "Jes\u00fas vio que se acercaba mucha gente y subi\u00f3 al monte a ensenar. Comienza dando esperanza a los que no la tienen anunciando que Dios los va a bendecir a pesar de su condici\u00f3n. Luego bendice a los que tienen alguna meta o trabajo para Dios. Termina bendiciendo a los que lo siguen lo apoyan en el ministerio sin temor a ser perseguidos.", 
+        "verdad": "Dios nos bendice en todo momento porque somos sus hijos y buscamos a paz para los dem\u00e1s", 
+        "ejercicios": "Yo soy bendecido por Dios en todo\r\nDios tiene un plan para m\u00ed\r\nEstoy alegre porque tengo un premio de Dios para m\u00ed\r\nYo trabajo para Dios y busco su paz", 
+        "nombre": "Las Bienaventuranzas", 
+        "imagen": "kids/colorear/imagen_ninos_3.jpg"
+    }
+},
+{
+    "pk": 11, 
+    "model": "kids.clase", 
+    "fields": {
+        "orden": 6, 
+        "memorizar": "Jehov\u00e1 es mi roca, y mi fortaleza, y mi libertador.\r\n2 Samuel 22:2", 
+        "preguntas": "\u00bfSobre qu\u00e9 edific\u00f3 su casa el hombre prudente?\r\n\u00bfSobre qu\u00e9 edific\u00f3 su casa el hombre insensato?\r\n\u00bfQu\u00e9 simboliza la roca en la par\u00e1bola?\r\n\u00bfQu\u00e9 tienes que hacer para ser un ni\u00f1o prudente?", 
+        "versiculo": "Mateo 7:24-29", 
+        "temas": "El hombre prudente oye la palabra de Dios y la hace.\r\nEl hombre insensato no oye ni pone en pr\u00e1ctica la palabra de Dios.\r\nJes\u00fas y su palabra son la Roca sobre la cual debemos basar nuestras vidas para que estemos seguros.\r\nLos problemas no podr\u00e1n derrumbarnos porque Jes\u00fas nos fortalece.", 
+        "historia": "Jes\u00fas dijo: Cualquiera que oye estas <palabras> y las hace le comparar\u00e9 al hombre <prudente> que edific\u00f3 su <casa> sobre la <roca>, vino la <lluvia>, <r\u00edos>, soplaron <vientos>; y no <cay\u00f3>: porque estaba fundada sobre la roca. Y <cualquiera> que oye estas palabras, y no las <hace>, le comparar\u00e9 al hombre <insensato> que edific\u00f3 su casa sobre la <arena>; vino la lluvia, r\u00edos, vientos, hicieron \u00edmpetu sobre la casa, y cay\u00f3 y fue grande <ruina>.", 
+        "bosquejo": "Jes\u00fas dijo: Cualquiera que oye estas palabras y las hace le comparar\u00e9...\r\nEl hombre prudente edific\u00f3 su casa sobre la roca, vino la lluvia, r\u00edos, vientos; y no cay\u00f3: porque estaba fundada sobre la roca.\r\nCualquiera que oye estas palabras, y no las hace, le comparar\u00e9...\r\nEl hombre insensato edific\u00f3 su casa sobre la arena; vino la lluvia, r\u00edos, vientos, hicieron \u00edmpetu sobre la casa, y cay\u00f3 y fue grande ruina.\r\nLa gente se admiraba de su doctrina porque ense\u00f1aba como quien tiene autoridad.\r\n\r\n", 
+        "verdad": "Nuestra vida est\u00e1 segura en Jes\u00fas que es\r\nnuestra Roca y fortaleza.", 
+        "ejercicios": "Yo escucho y pongo en pr\u00e1ctica la palabra de Dios.\r\nMi vida esta fundada en Jes\u00fas y su palabra.\r\nLos problemas no me derrumban porque Jes\u00fas es mi fortaleza.\r\nSoy un ni\u00f1o prudente.", 
+        "nombre": "La Casa Edificada Sobre La Roca", 
+        "imagen": "kids/colorear/casa_sobre_la_roca.png"
+    }
+},
+{
+    "pk": 12, 
+    "model": "kids.clase", 
+    "fields": {
+        "orden": 12, 
+        "memorizar": "\"Pedro les dijo: Arrepent\u00edos, y baut\u00edcese cada uno de vosotros en el nombre de Jesucristo para perd\u00f3n de los pecados; y recibir\u00e9is el don del Esp\u00edritu Santo\". Hech 2:28", 
+        "preguntas": "\u00bfSin bautismo en aguas se puede ser salvo?\r\n\u00bfEs necesario el bautismo en aguas?, \u00bfpara qu\u00e9?\r\n\u00bfPor qu\u00e9 con agua?, \u00bfpor qu\u00e9 sumergirse?.\r\n\u00bfQuienes pueden bautizarse?.", 
+        "versiculo": "Ez 36:24-28; Hech 8:26-39", 
+        "temas": "La Fe salva, el bautismo muestra nuestro compromiso.\r\nBautismo para perd\u00f3n de los pecados, no salvaci\u00f3n.\r\nBautismo, cumplir toda justicia.\r\nNo se le puede impedir el bautismo a nadie.", 
+        "historia": "28 Felipe <obedecio>. En el camino se encontr\u00f3 con un hombre muy importante. Ese oficial hab\u00eda ido a Jerusal\u00e9n para adorar a <Dios>, y ahora volv\u00eda a su pa\u00eds. El oficial iba sentado en su carruaje, leyendo el libro del profeta <Isaias>. 29 Entonces el Esp\u00edritu de Dios le dijo a <Felipe>: Ac\u00e9rcate al carruaje, y camina junto a \u00e9l. 30 Felipe corri\u00f3 para alcanzar el carruaje. Entonces le pregunt\u00f3: \u2014\u00bfEntiende usted lo que est\u00e1 leyendo? 31 Y el oficial le respondi\u00f3: \u2014\u00bfY c\u00f3mo voy a entenderlo, si no hay quien me lo <explique>? Dicho esto, el oficial invit\u00f3 a Felipe a que subiera a su carruaje y se sentara a su lado. 32-33 En ese momento el oficial le\u00eda el pasaje que dice: Fue llevado al matadero, como se lleva a las ovejas\r\npara cortarles la lana. Como si fuera un <cordero>... 34 El oficial le pregunt\u00f3 a Felipe: \u2014D\u00edgame usted, por favor: \u00bfest\u00e1 hablando el profeta de \u00e9l mismo, o de otra persona? 35 Entonces Felipe, partiendo de ese pasaje de Isa\u00edas, le explic\u00f3 las buenas noticias acerca de <Jesus>. 36-37 En el camino pasaron por un lugar donde hab\u00eda agua. Entonces el oficial dijo: \u00a1All\u00ed hay <agua>! \u00bfNo podr\u00eda usted bautizarme ahora? 38 Enseguida el oficial mand\u00f3 parar el carruaje, baj\u00f3 con Felipe al agua, y Felipe lo <bautizo>. 39 Pero cuando salieron del agua, el Esp\u00edritu del Se\u00f1or se llev\u00f3 a Felipe; y aunque el oficial no volvi\u00f3 a verlo, sigui\u00f3 su viaje muy <contento>.", 
+        "bosquejo": "SIGNIFICADO\r\nEl t\u00e9rmino griego b\u00e1\u00b7pti\u00b7sma se refiere al proceso de inmersi\u00f3n, es decir, sumergirse y emerger; se deriva del verbo b\u00e1\u00b7pt\u014d, \u201csumergir\u201d.\r\n\r\nORIGEN\r\nEz 36:24-28 Simbolo de purificaci\u00f3n.\r\n\r\nJES\u00daS CUMPLE MANDATO\r\nMt 3:13-17; Mc 1:9-11; Lc 3:21-22; Jn 1:29-34 Jes\u00fas como hombre ten\u00eda que cumplir toda justicia.\r\n\r\nIMPORTANCIA\r\nHech 2:38; Col 2:11-12; Tito 3:4-7; Efe 5:26; Heb 6:1-4, 1 Ped 3:18-22. Un acto de fe y obediencia.\r\n\r\nREQUISITOS\r\nHech 8:26-39 Tan s\u00f3lo creer de coraz\u00f3n.\r\n", 
+        "verdad": "El Bautismo en Agua evidencia mi conversi\u00f3n en obediencia a la Palabra de Dios.", 
+        "ejercicios": "Yo obedezco a mi Dios.\r\nYo declaro mi servicio y compromiso a mi Dios.\r\nDios me perdon\u00f3 el pecado, y mis pecados.\r\nSoy un siervo de Dios.", 
+        "nombre": "Bautismo en Agua", 
+        "imagen": "kids/colorear/08_bautismo_de_jesus.jpg"
+    }
+},
+{
+    "pk": 13, 
+    "model": "kids.clase", 
+    "fields": {
+        "orden": 12, 
+        "memorizar": "Hech 2:38 \"Pedro les dijo: Arrepent\u00edos, y baut\u00edcese cada uno de vosotros en el nombre de Jesucristo para perd\u00f3n de los pecados; y recibir\u00e9is el don del Esp\u00edritu Santo\".", 
+        "preguntas": "\u00bfSin bautismo en aguas se puede ser salvo?\r\n\u00bfEs necesario el bautismo en aguas?, \u00bfpara qu\u00e9?\r\n\u00bfPor qu\u00e9 con agua?, \u00bfpor qu\u00e9 sumergirse?.\r\n\u00bfQuienes pueden bautizarse?.", 
+        "versiculo": "Ez 36:24-28; Hech 8:26-39", 
+        "temas": "La Fe salva, el bautismo muestra nuestro compromiso.\r\nBautismo para perd\u00f3n de los pecados, no salvaci\u00f3n.\r\nBautismo, cumplir toda justicia.\r\nNo se le puede impedir el bautismo a nadie.", 
+        "historia": "", 
+        "bosquejo": "SIGNIFICADO\r\nEl t\u00e9rmino griego b\u00e1\u00b7pti\u00b7sma se refiere al proceso de inmersi\u00f3n, es decir, sumergirse y emerger; se deriva del verbo b\u00e1\u00b7pt\u014d, \u201csumergir\u201d.\r\n\r\nORIGEN\r\nEz 36:24-28 Simbolo de purificaci\u00f3n.\r\n\r\nJES\u00daS CUMPLE MANDATO\r\nMt 3:13-17; Mc 1:9-11; Lc 3:21-22; Jn 1:29-34 Jes\u00fas como hombre ten\u00eda que cumplir toda justicia.\r\n\r\nIMPORTANCIA\r\nHech 2:38; Col 2:11-12; Tito 3:4-7; Efe 5:26; Heb 6:1-4, 1 Ped 3:18-22. Un acto de fe y obediencia.\r\n\r\nREQUISITOS\r\nHech 8:26-39 Tan s\u00f3lo creer de coraz\u00f3n.\r\n", 
+        "verdad": "El Bautismo en Agua evidencia mi conversi\u00f3n en obediencia a la Palabra de Dios.", 
+        "ejercicios": "Yo obedezco a mi Dios.\r\nYo declaro mi servicio y compromiso a mi Dios.\r\nDios me perdon\u00f3 el pecado, y mis pecados.\r\nSoy un siervo de Dios.", 
+        "nombre": "Bautismo en Agua", 
+        "imagen": "kids/colorear/08_bautismo_de_jesus_1.jpg"
+    }
+},
+{
+    "pk": 14, 
+    "model": "kids.clase", 
+    "fields": {
+        "orden": 13, 
+        "memorizar": "\"Jes\u00fas le dijo: Lev\u00e1ntate, toma tu lecho, y anda. Y al instante aquel hombre fue sanado, y tom\u00f3 su lecho, y anduvo. Y era d\u00eda de reposo aquel d\u00eda.\"  Juan 5 :1-15", 
+        "preguntas": "\u00bfQui\u00e9n pod\u00eda ser sanado en el estanque?\r\n\u00bfC\u00f3mo llegaban los cojos ciegos y paral\u00edticos al estanque, solos?\r\n\u00bfQui\u00e9n es nuestra fuente agua viva?\r\n", 
+        "versiculo": "Juan 5 :1-15 ", 
+        "temas": "Por misericordia algunos enfermos recib\u00edan su sanidad.\r\nJes\u00fas quer\u00eda que todos fueran sanados.\r\nEl hombre enfermo quer\u00eda ser sanado pero le parec\u00eda imposible que esto llegue a suceder.\r\nJes\u00fas es la fuente (de agua) que da vida eterna.\r\nPodemos pedir a nuestro padre con toda confianza. ", 
+        "historia": "Jes\u00fas fue al <estanque> donde eran <sanados> algunos enfermos y fu\u00e9 donde uno que tenia 38 a\u00f1os <enfermo>, le <pregunto> si quer\u00eda ser sanado. El hombre le dijo que era casi <imposible> porque no tenia quien lo ayude. Jes\u00fas le dijo que se <levante>, tome su cama y se vaya. El hombre fue sanado y se fue, la gente le recriminaba que no deb\u00eda <trabajar> en s\u00e1bado, le <preguntaron> quien le dio esa orden pero <Jes\u00fas> ya se hab\u00eda ido.", 
+        "bosquejo": "Habia un estanque llamado \"casa de misericordia\" (Bethesda) donde los enfermos descansaban esperando ser sanados.\r\nJes\u00fas se acerco solamente a una persona que tenia 38 estando enferma. Le pregunto si quer\u00eda ser sanado.\r\nEl hombre le cont\u00f3 la dificultad que tenia de llegar a ser sanado. Jes\u00fas le dijo que se ponga de pie, tome su camilla y se vaya.\r\nEste hombre estaba viendo en Jes\u00fas a alguien que pod\u00eda meterlo al agua y ser finalmente libre de la enfermedad.\r\nLa gente le recrimino el estar cargando su camilla en d\u00eda de reposo pero el hombre no les hizo caso, les dijo que quien lo san\u00f3 le di\u00f3 esa orden.\r\nEste hombre no conoc\u00eda a Jes\u00fas, todo ese tiempo hab\u00eda estado viviendo en ese estanque y muchos otros enfermos m\u00e1s tambi\u00e9n, esperando ser sanados por su propio esfuerzo.\r\nFinalmente Jes\u00fas lo encontr\u00f3 y le pidi\u00f3 que no peque m\u00e1s. La culpa del pecado hab\u00eda hecho que este hombre piense que no merec\u00eda ayuda para ser sanado.\r\nEn el estanque hab\u00edan cojos, ciegos y paral\u00edticos que s\u00ed eran sanados y llegaban antes que \u00e9l, seguramente porque alguien los ayudaba.\r\nLa enfermedad le imped\u00eda ir al templo y ser libre de su pecado as\u00ed que estaba en un c\u00edrculo de enfermedad y culpa.", 
+        "verdad": "El hombre enfermo necesitaba ser bautizado, no en el estanque, sino en Jes\u00fas.", 
+        "ejercicios": "Dios es mi padre y quiere darme lo mejor.\r\nDios suple mis necesidades en todo momento.\r\nDios me perdon\u00f3 de todo pecado, puedo recibir de Dios siempre.", 
+        "nombre": "El Estanque de Bethesda", 
+        "imagen": "kids/colorear/paralitico_betesda2.jpeg"
+    }
+},
+{
+    "pk": 15, 
+    "model": "kids.clase", 
+    "fields": {
+        "orden": 14, 
+        "memorizar": "\"Jes\u00fas le dijo: Lev\u00e1ntate, toma tu lecho, y anda. Y al instante aquel hombre fue sanado, y tom\u00f3 su lecho, y anduvo. Y era d\u00eda de reposo aquel d\u00eda.\"  Juan 5 :1-15", 
+        "preguntas": "\u00bfQui\u00e9n pod\u00eda ser sanado en el estanque?\r\n\u00bfC\u00f3mo llegaban los cojos ciegos y paral\u00edticos al estanque, solos?\r\n\u00bfQui\u00e9n es nuestra fuente agua viva?\r\n", 
+        "versiculo": "Juan 5 :1-15 ", 
+        "temas": "Por misericordia algunos enfermos recib\u00edan su sanidad.\r\nJes\u00fas quer\u00eda que todos fueran sanados.\r\nEl hombre enfermo quer\u00eda ser sanado pero le parec\u00eda imposible que esto llegue a suceder.\r\nJes\u00fas es la fuente (de agua) que da vida eterna.\r\nPodemos pedir a nuestro padre con toda confianza. ", 
+        "historia": "Jes\u00fas fue al <estanque> donde eran <sanados> algunos enfermos y fu\u00e9 donde uno que tenia 38 a\u00f1os <enfermo>, le <pregunto> si quer\u00eda ser sanado. El hombre le dijo que era casi <imposible> porque no tenia quien lo ayude. Jes\u00fas le dijo que se <levante>, tome su cama y se vaya. El hombre fue sanado y se fue, la gente le recriminaba que no deb\u00eda <trabajar> en s\u00e1bado, le <preguntaron> quien le dio esa orden pero <Jes\u00fas> ya se hab\u00eda ido.", 
+        "bosquejo": "Habia un estanque llamado \"casa de misericordia\" (Bethesda) donde los enfermos descansaban esperando ser sanados.\r\nJes\u00fas se acerco solamente a una persona que tenia 38 estando enferma. Le pregunto si quer\u00eda ser sanado.\r\nEl hombre le cont\u00f3 la dificultad que tenia de llegar a ser sanado. Jes\u00fas le dijo que se ponga de pie, tome su camilla y se vaya.\r\nEste hombre estaba viendo en Jes\u00fas a alguien que pod\u00eda meterlo al agua y ser finalmente libre de la enfermedad.\r\nLa gente le recrimino el estar cargando su camilla en d\u00eda de reposo pero el hombre no les hizo caso, les dijo que quien lo san\u00f3 le di\u00f3 esa orden.\r\nEste hombre no conoc\u00eda a Jes\u00fas, todo ese tiempo hab\u00eda estado viviendo en ese estanque y muchos otros enfermos m\u00e1s tambi\u00e9n, esperando ser sanados por su propio esfuerzo.\r\nFinalmente Jes\u00fas lo encontr\u00f3 y le pidi\u00f3 que no peque m\u00e1s. La culpa del pecado hab\u00eda hecho que este hombre piense que no merec\u00eda ayuda para ser sanado.\r\nEn el estanque hab\u00edan cojos, ciegos y paral\u00edticos que s\u00ed eran sanados y llegaban antes que \u00e9l, seguramente porque alguien los ayudaba.\r\nLa enfermedad le imped\u00eda ir al templo y ser libre de su pecado as\u00ed que estaba en un c\u00edrculo de enfermedad y culpa.", 
+        "verdad": "El hombre enfermo necesitaba ser bautizado, no en el estanque, sino en Jes\u00fas.", 
+        "ejercicios": "Dios es mi padre y quiere darme lo mejor.\r\nDios suple mis necesidades en todo momento.\r\nDios me perdon\u00f3 de todo pecado, puedo recibir de Dios siempre.", 
+        "nombre": "El Estanque de Betesda", 
+        "imagen": "kids/colorear/paralitico_betesda2_1.jpeg"
+    }
+},
+{
+    "pk": 16, 
+    "model": "kids.clase", 
+    "fields": {
+        "orden": 15, 
+        "memorizar": "\"Yo estoy acostumbrado a dar ordenes y a obedecerlas. Cuando le digo a uno de mis soldados: \u201cVe!\u201d, me obedece y va. Si le digo a otro: \u201cVen!\u201d, me obedece y viene. Y si le digo a uno de mis sirvientes: \u201cHaz esto!\u201d, lo hace.\" Lucas 7:8", 
+        "preguntas": "\u00bfPorque le rogaron a Jesus que ayudara al Capitan?\r\n\u00bfPorque el Capitan no fue a hablar con Jesus?\r\n\u00bfQue fue lo que le sorprendio a Jesus?", 
+        "versiculo": "Lucas 7:1-10", 
+        "temas": "Hay poder en las palabras, sin importar donde nos encontremos.\r\nLas circunstancias tienen que obedecernos porque hablamos la Palabra de Dios.\r\nTenemos que creer en que lo que decimos va a resultar como una orden a un soldado.\r\n", 
+        "historia": "En Capernaum vivia un <capitan> del ejercito romano, que tenia un sirviente a quien queria mucho. Ese sirviente estaba muy <enfermo> y a punto de morir. Cuando el capitan oyo hablar de <jesus>, mando a unos jefes de los judios para que lo buscaran y le dijeran: \"Por favor, venga a mi <casa> y sane a mi sirviente.\" Ellos fueron a ver a Jesus y le dieron el mensaje. Ademas, le rogaron: \"Por favor, merece que lo ayudes, es un hombre <bueno>. A los judios nos trata bien, \u00a1y hasta mando construir una <sinagoga> para nosotros!\" Jes\u00fas fue con ellos, y cuando estaban cerca de la casa, el capitan romano mando a unos <amigos> para que le dijeran a Jesus: \"Se\u00f1or, no se moleste usted por mi, no merezco que entre en mi casa. Tampoco me siento <digno> de ir a verlo yo mismo. Solamente le ruego que ordene que mi sirviente se sane; yo se que el quedara completamente sano. Yo estoy acostumbrado a dar <ordenes> y a obedecerlas.\" Al escuchar las palabras del capitan, Jesus se quedo <admirado> y les dijo a quienes lo seguian: \"En todo Israel no he encontrado a nadie que <confie> tanto en mi, como este capitan romano.\" Cuando los mensajeros regresaron a la casa, encontraron al sirviente completamente <sano>.", 
+        "bosquejo": "En Capernaun vivia un Capitan Romano que tenia un sirviente muy querido que estaba enfermo.\r\nCuando el Capitan oyo de Jesus mando a unos jefes de los judios para que lo buscaran para darle un mensaje.\r\n\"Por favor, venga a mi casa y sane a mi sirviente\"\r\nEllos le rogaron diciendo \"Por favor ayudalo, el merece que lo ayudes, es muy bueno con nosotros y nos construyo una sinagoga\"\r\nCuando ya estaban cerca el Capitan mando a unos amigos a decirle otro mensaje a Jesus.\r\n\"Se\u00f1or ya no se moleste, no merezco que entre en mi casa, no soy digno. Le ruego que ordene que mi sirviente se sane, yo se que quedara sano\"\r\n\"Estoy acostumbrado a dar ordenes y obedecerlas\"\r\nJes\u00fas se admiro de las palabras del Capitan y dijo \"No he encontrado a nadie en todo Israel que confie en mi tanto como este Capitan Romano\"\r\nCuando los mensajeros llegaron a casa encontraron al sirviente completamente sano.", 
+        "verdad": "No era necesario que Jesus este presente, solo tenia que hablar y la situacion debia cambiar.", 
+        "ejercicios": "Yo declaro la Palabra de Dios y se cumple.\r\nLas circunstancias me obedecen a mi.\r\nLo que yo digo sucede al instante.\r\nYo creo que la Palabra de Dios funciona para mi.", 
+        "nombre": "Un Capit\u00e1n Romano", 
+        "imagen": "kids/colorear/Capitan_Romano.JPG"
+    }
+},
+{
+    "pk": 1, 
+    "model": "kids.apoderadotipo", 
+    "fields": {
+        "nombre": "Mam\u00e1"
+    }
+},
+{
+    "pk": 2, 
+    "model": "kids.apoderadotipo", 
+    "fields": {
+        "nombre": "Pap\u00e1"
+    }
+},
+{
+    "pk": 3, 
+    "model": "kids.apoderadotipo", 
+    "fields": {
+        "nombre": "T\u00edo(a)"
+    }
+},
+{
+    "pk": 4, 
+    "model": "kids.apoderadotipo", 
+    "fields": {
+        "nombre": "Abuelo(a)"
+    }
+},
+{
+    "pk": 5, 
+    "model": "kids.apoderadotipo", 
+    "fields": {
+        "nombre": "Otro"
+    }
+},
+{
+    "pk": 1, 
+    "model": "kids.puntomotivo", 
+    "fields": {
+        "nombre": "Asistencia", 
+        "valor": 1
+    }
+},
+{
+    "pk": 2, 
+    "model": "kids.puntomotivo", 
+    "fields": {
+        "nombre": "Vers\u00edculo", 
+        "valor": 1
+    }
+},
+{
+    "pk": 3, 
+    "model": "kids.puntomotivo", 
+    "fields": {
+        "nombre": "Hoja", 
+        "valor": 1
+    }
+},
+{
+    "pk": 4, 
+    "model": "kids.puntomotivo", 
+    "fields": {
+        "nombre": "Participaci\u00f3n", 
+        "valor": 1
+    }
+},
+{
+    "pk": 5, 
+    "model": "kids.puntomotivo", 
+    "fields": {
+        "nombre": "Comportamiento", 
+        "valor": 1
+    }
+},
+{
+    "pk": 1, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_permission", 
+        "name": "Can add permission", 
+        "content_type": 1
+    }
+},
+{
+    "pk": 2, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_permission", 
+        "name": "Can change permission", 
+        "content_type": 1
+    }
+},
+{
+    "pk": 3, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_permission", 
+        "name": "Can delete permission", 
+        "content_type": 1
+    }
+},
+{
+    "pk": 4, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_group", 
+        "name": "Can add group", 
+        "content_type": 2
+    }
+},
+{
+    "pk": 5, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_group", 
+        "name": "Can change group", 
+        "content_type": 2
+    }
+},
+{
+    "pk": 6, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_group", 
+        "name": "Can delete group", 
+        "content_type": 2
+    }
+},
+{
+    "pk": 7, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_user", 
+        "name": "Can add user", 
+        "content_type": 3
+    }
+},
+{
+    "pk": 8, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_user", 
+        "name": "Can change user", 
+        "content_type": 3
+    }
+},
+{
+    "pk": 9, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_user", 
+        "name": "Can delete user", 
+        "content_type": 3
+    }
+},
+{
+    "pk": 10, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_contenttype", 
+        "name": "Can add content type", 
+        "content_type": 4
+    }
+},
+{
+    "pk": 11, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_contenttype", 
+        "name": "Can change content type", 
+        "content_type": 4
+    }
+},
+{
+    "pk": 12, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_contenttype", 
+        "name": "Can delete content type", 
+        "content_type": 4
+    }
+},
+{
+    "pk": 13, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_session", 
+        "name": "Can add session", 
+        "content_type": 5
+    }
+},
+{
+    "pk": 14, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_session", 
+        "name": "Can change session", 
+        "content_type": 5
+    }
+},
+{
+    "pk": 15, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_session", 
+        "name": "Can delete session", 
+        "content_type": 5
+    }
+},
+{
+    "pk": 16, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_site", 
+        "name": "Can add site", 
+        "content_type": 6
+    }
+},
+{
+    "pk": 17, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_site", 
+        "name": "Can change site", 
+        "content_type": 6
+    }
+},
+{
+    "pk": 18, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_site", 
+        "name": "Can delete site", 
+        "content_type": 6
+    }
+},
+{
+    "pk": 19, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_logentry", 
+        "name": "Can add log entry", 
+        "content_type": 7
+    }
+},
+{
+    "pk": 20, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_logentry", 
+        "name": "Can change log entry", 
+        "content_type": 7
+    }
+},
+{
+    "pk": 21, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_logentry", 
+        "name": "Can delete log entry", 
+        "content_type": 7
+    }
+},
+{
+    "pk": 22, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_userprofile", 
+        "name": "Can add user profile", 
+        "content_type": 8
+    }
+},
+{
+    "pk": 23, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_userprofile", 
+        "name": "Can change user profile", 
+        "content_type": 8
+    }
+},
+{
+    "pk": 24, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_userprofile", 
+        "name": "Can delete user profile", 
+        "content_type": 8
+    }
+},
+{
+    "pk": 25, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_salon", 
+        "name": "Can add salon", 
+        "content_type": 9
+    }
+},
+{
+    "pk": 26, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_salon", 
+        "name": "Can change salon", 
+        "content_type": 9
+    }
+},
+{
+    "pk": 27, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_salon", 
+        "name": "Can delete salon", 
+        "content_type": 9
+    }
+},
+{
+    "pk": 28, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_clase", 
+        "name": "Can add clase", 
+        "content_type": 10
+    }
+},
+{
+    "pk": 29, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_clase", 
+        "name": "Can change clase", 
+        "content_type": 10
+    }
+},
+{
+    "pk": 30, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_clase", 
+        "name": "Can delete clase", 
+        "content_type": 10
+    }
+},
+{
+    "pk": 31, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_profesor", 
+        "name": "Can add profesor", 
+        "content_type": 11
+    }
+},
+{
+    "pk": 32, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_profesor", 
+        "name": "Can change profesor", 
+        "content_type": 11
+    }
+},
+{
+    "pk": 33, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_profesor", 
+        "name": "Can delete profesor", 
+        "content_type": 11
+    }
+},
+{
+    "pk": 34, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_apoderadotipo", 
+        "name": "Can add apoderado tipo", 
+        "content_type": 12
+    }
+},
+{
+    "pk": 35, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_apoderadotipo", 
+        "name": "Can change apoderado tipo", 
+        "content_type": 12
+    }
+},
+{
+    "pk": 36, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_apoderadotipo", 
+        "name": "Can delete apoderado tipo", 
+        "content_type": 12
+    }
+},
+{
+    "pk": 37, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_alumno", 
+        "name": "Can add alumno", 
+        "content_type": 13
+    }
+},
+{
+    "pk": 38, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_alumno", 
+        "name": "Can change alumno", 
+        "content_type": 13
+    }
+},
+{
+    "pk": 39, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_alumno", 
+        "name": "Can delete alumno", 
+        "content_type": 13
+    }
+},
+{
+    "pk": 40, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_nomina", 
+        "name": "Can add nomina", 
+        "content_type": 14
+    }
+},
+{
+    "pk": 41, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_nomina", 
+        "name": "Can change nomina", 
+        "content_type": 14
+    }
+},
+{
+    "pk": 42, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_nomina", 
+        "name": "Can delete nomina", 
+        "content_type": 14
+    }
+},
+{
+    "pk": 43, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_asistencia", 
+        "name": "Can add asistencia", 
+        "content_type": 15
+    }
+},
+{
+    "pk": 44, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_asistencia", 
+        "name": "Can change asistencia", 
+        "content_type": 15
+    }
+},
+{
+    "pk": 45, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_asistencia", 
+        "name": "Can delete asistencia", 
+        "content_type": 15
+    }
+},
+{
+    "pk": 46, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_puntomotivo", 
+        "name": "Can add punto motivo", 
+        "content_type": 16
+    }
+},
+{
+    "pk": 47, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_puntomotivo", 
+        "name": "Can change punto motivo", 
+        "content_type": 16
+    }
+},
+{
+    "pk": 48, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_puntomotivo", 
+        "name": "Can delete punto motivo", 
+        "content_type": 16
+    }
+},
+{
+    "pk": 49, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_punto", 
+        "name": "Can add punto", 
+        "content_type": 17
+    }
+},
+{
+    "pk": 50, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_punto", 
+        "name": "Can change punto", 
+        "content_type": 17
+    }
+},
+{
+    "pk": 51, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_punto", 
+        "name": "Can delete punto", 
+        "content_type": 17
+    }
+},
+{
+    "pk": 1, 
+    "model": "auth.user", 
+    "fields": {
+        "username": "daniel", 
+        "first_name": "Daniel", 
+        "last_name": "drm.electronic@gmail.com", 
+        "is_active": true, 
+        "is_superuser": true, 
+        "is_staff": true, 
+        "last_login": "2014-03-26T17:18:54.789Z", 
+        "groups": [], 
+        "user_permissions": [], 
+        "password": "pbkdf2_sha256$10000$xMEqRHh57QZX$XsPns/I14SldADb7DhFPvg89uSdTuTcw66PFFi7vSmo=", 
+        "email": "drm.electronic@gmail.com", 
+        "date_joined": "2013-08-11T04:50:01.340Z"
+    }
+},
+{
+    "pk": 2, 
+    "model": "auth.user", 
+    "fields": {
+        "username": "pamela", 
+        "first_name": "Pamela", 
+        "last_name": "Reyes Enciso", 
+        "is_active": true, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2013-08-11T04:50:43.885Z", 
+        "groups": [], 
+        "user_permissions": [], 
+        "password": "", 
+        "email": "pameladrm@gmail.com", 
+        "date_joined": "2013-08-11T04:50:43.885Z"
+    }
+},
+{
+    "pk": 3, 
+    "model": "auth.user", 
+    "fields": {
+        "username": "guadalupe", 
+        "first_name": "Guadalupe", 
+        "last_name": "Enciso Calvo", 
+        "is_active": true, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2013-08-11T04:50:43.889Z", 
+        "groups": [], 
+        "user_permissions": [], 
+        "password": "", 
+        "email": "@gmail.com", 
+        "date_joined": "2013-08-11T04:50:43.889Z"
+    }
+},
+{
+    "pk": 4, 
+    "model": "auth.user", 
+    "fields": {
+        "username": "robert", 
+        "first_name": "Robert", 
+        "last_name": "Robles Mart\u00ednez", 
+        "is_active": true, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2013-08-11T04:50:43.892Z", 
+        "groups": [], 
+        "user_permissions": [], 
+        "password": "", 
+        "email": "rrobertdan@gmail.com", 
+        "date_joined": "2013-08-11T04:50:43.893Z"
+    }
+},
+{
+    "pk": 5, 
+    "model": "auth.user", 
+    "fields": {
+        "username": "tim", 
+        "first_name": "Tim", 
+        "last_name": "Robles Mart\u00ednez", 
+        "is_active": true, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2013-08-11T04:50:43.896Z", 
+        "groups": [], 
+        "user_permissions": [], 
+        "password": "", 
+        "email": "robles_tim@gmail.com", 
+        "date_joined": "2013-08-11T04:50:43.896Z"
+    }
+},
+{
+    "pk": 6, 
+    "model": "auth.user", 
+    "fields": {
+        "username": "ronald", 
+        "first_name": "Ronald", 
+        "last_name": "Robles Mart\u00ednez", 
+        "is_active": true, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2013-08-11T04:50:43.899Z", 
+        "groups": [], 
+        "user_permissions": [], 
+        "password": "", 
+        "email": "brain248@hotmail.com", 
+        "date_joined": "2013-08-11T04:50:43.899Z"
+    }
+},
+{
+    "pk": 1, 
+    "model": "main.userprofile", 
+    "fields": {
+        "nacimiento": "1987-05-06", 
+        "celular": "969334754", 
+        "user": 1, 
+        "direccion": "Jr. San Lucas 211 Urb. Palao - SMP"
+    }
+},
+{
+    "pk": 2, 
+    "model": "main.userprofile", 
+    "fields": {
+        "nacimiento": "1987-12-28", 
+        "celular": "969334753", 
+        "user": 2, 
+        "direccion": "Jr. San Lucas 211 Urb. Palao - SMP"
+    }
+},
+{
+    "pk": 3, 
+    "model": "main.userprofile", 
+    "fields": {
+        "nacimiento": "1987-05-06", 
+        "celular": "987653242", 
+        "user": 3, 
+        "direccion": "Jr. San Lucas 211 Urb. Palao - SMP"
+    }
+},
+{
+    "pk": 4, 
+    "model": "main.userprofile", 
+    "fields": {
+        "nacimiento": "1981-05-25", 
+        "celular": "969334755", 
+        "user": 4, 
+        "direccion": "Jr.Algarrobos 211 Urb. Los Jardines - SMP"
+    }
+},
+{
+    "pk": 5, 
+    "model": "main.userprofile", 
+    "fields": {
+        "nacimiento": "1993-04-06", 
+        "celular": "962387271", 
+        "user": 5, 
+        "direccion": "Jr.Algarrobos 211 Urb. Los Jardines - SMP"
+    }
+},
+{
+    "pk": 6, 
+    "model": "main.userprofile", 
+    "fields": {
+        "nacimiento": "1983-11-15", 
+        "celular": "969334754", 
+        "user": 6, 
+        "direccion": "Jr.Algarrobos 211 Urb. Los Jardines - SMP"
+    }
+}
+]

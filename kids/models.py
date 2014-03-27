@@ -26,7 +26,7 @@ class Salon(models.Model):
 
 
 class Clase(models.Model):
-    orden = models.PositiveSmallIntegerField()
+    orden = models.PositiveSmallIntegerField(unique=True)
     nombre = models.CharField(max_length=32)
     versiculo = models.CharField(max_length=256, verbose_name='Cita')
     bosquejo = models.CharField(max_length=1024 * 8)

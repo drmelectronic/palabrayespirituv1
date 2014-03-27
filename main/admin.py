@@ -29,6 +29,27 @@ class SalonAdmin(admin.ModelAdmin):
     list_display = ('desde', 'hasta')
 
 
+class ClaseAdmin(admin.ModelAdmin):
+    fieldsets = [
+        (None, {'fields': [
+            'orden',
+            'nombre',
+            'versiculo',
+            'bosquejo',
+            'temas',
+            'memorizar',
+            'ejercicios',
+            'imagen',
+            'preguntas',
+            'historia',
+            'verdad',
+            ]
+            }
+        )
+    ]
+    list_display = ('orden', 'nombre', 'versiculo')
+
+
 class UserProfileAdmin(admin.ModelAdmin):
     fieldsets = [
         (None, {'fields': [
