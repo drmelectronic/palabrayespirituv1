@@ -64,5 +64,6 @@ class UserProfileAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Alumno, AlumnoAdmin)
+admin.site.register(Clase, ClaseAdmin)
 admin.site.register(Salon, SalonAdmin)
 admin.site.register(UserProfile, UserProfileAdmin)
