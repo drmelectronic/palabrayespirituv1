@@ -15,3 +15,6 @@ class UserProfile(models.Model):
 
     def __unicode__(self):
         return self.user.first_name
+
+    def nombre(self):
+        return self.user.first_name.split(' ')[0]

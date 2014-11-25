@@ -1,0 +1,14 @@
+{% extends 'kids/base.html' %}
+{% comment %} {{ titulo }} {% endcomment %}
+{% block titulo %}{{ titulo }}{% endblock %}
+{% block encabezado %}{{ titulo }}{% endblock %}
+{% block contenido %}
+<form enctype="multipart/form-data" method="post" action="">
+	{% csrf_token %}
+	<table>
+	{{ form.as_table }}
+	</table>
+	<p><input type="submit" value="Guardar"/></p>
+</form>
+{% endblock %}
+{% block javascript %}{% endblock %}

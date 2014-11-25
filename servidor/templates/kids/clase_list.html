@@ -1,0 +1,34 @@
+{% extends 'kids/base.html' %}
+{% comment %} Lista de clases {% endcomment %}
+{% block titulo %}Lista de Clases{% endblock %}
+{% block encabezado %}Lista de Clases{% endblock %}
+{% block contenido %}
+<table class="clases">
+{% for clase in clases %}
+    <tr>
+        <td>
+            <a href="/kids/clases/editar/{{clase.id}}">
+                {{ clase.orden }}
+            </a>
+        </td>
+        <td>
+            <a href="/kids/clases/editar/{{clase.id}}">
+                {{ clase.nombre }}
+            </a>
+        </td>
+        <td>
+            <a href="/media/kids/guias/{{clase.id}}.pdf">
+                PDF
+            </a>
+        </td>
+        <td>
+            <a href="/kids/clases/compartir/{{clase.id}}">
+                Compartir
+            </a>
+        </td>
+    </tr>
+{% endfor %}
+</table>
+<a href="clases/crear">Añadir</a>
+{% endblock %}
+{% block javascript %}{% endblock %}

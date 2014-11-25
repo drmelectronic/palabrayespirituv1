@@ -3,6 +3,7 @@
 *.pyc
 local_settings.py
 settings.py
+servidor/claves.py
 *.nja
 servidor/media/*/*.jpg
 servidor/media/*/*.png

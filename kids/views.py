@@ -1,14 +1,27 @@
+#! /usr/bin/python
 # -*- encoding: utf-8 -*-
+
 from kids.models import *
 from kids.forms import *
 from django.template import RequestContext
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
-from django.views.generic import ListView, CreateView, FormView
+from django.views.generic import ListView, CreateView, FormView, UpdateView
 from django.shortcuts import render_to_response, get_object_or_404
 from django.contrib.auth.decorators import login_required
 import datetime
-
+from kids.pdf import *
+import servidor.claves
+from django.conf import settings
+import smtplib
+import mimetypes
+from email.message import Message
+from email import encoders
+from email.mime.audio import MIMEAudio
+from email.mime.base import MIMEBase
+from email.mime.image import MIMEImage
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
 def salones(request):
     salones = Salon.objects.all()
@@ -49,11 +62,38 @@ def asistencia(request):
                 profesor=profile,
                 parque=parque)
             asistencia.save()
+            motivo = PuntoMotivo.objects.get(id=1)
+            punto = Punto(
+                asistencia=asistencia,
+                motivo=motivo,
+                profesor=profile)
+            punto.save()
         elif w != 7:
             return render_to_response('kids/error.html',
             {'error': 'No puede registrar asistencia si no es Domingo.'},
             RequestContext(request))
         return HttpResponseRedirect('/kids/salon/' + str(salon.id))
+
+
+@login_required
+def punto(request):
+    try:
+        asistencia_id = request.GET['asistencia']
+        asistencia = get_object_or_404(Asistencia, id=asistencia_id)
+        success = request.GET['next']
+        motivo_id = request.POST['motivo']
+        motivo = get_object_or_404(PuntoMotivo, id=motivo_id)
+        profesor = request.user.get_profile()
+    except:
+        erorr = 3 + 'c'
+        return HttpResponseRedirect(success)
+    else:
+        punto = Punto(
+            asistencia=asistencia,
+            motivo=motivo,
+            profesor=profesor)
+        punto.save()
+        return HttpResponseRedirect(success)
 
 
 class SalonAlumnosListView(ListView):
@@ -72,12 +112,15 @@ class SalonAlumnosListView(ListView):
         if w != 7:
             dia -= datetime.timedelta(w)
         context['dia'] = dia
+        motivos = PuntoMotivo.objects.all()[1:]
+        context['motivos'] = motivos
+        context['salon'] = self.kwargs['pk']
         return context
 
 
 class AlumnoCreateView(FormView):
     form_class = AlumnoProfileForm
-    template_name = 'kids/alumno_new.html'
+    template_name = 'kids/view_new.html'
     success_url = '/kids/alumnos'
 
     def form_valid(self, form):
@@ -122,3 +165,89 @@ class AlumnoCreateView(FormView):
             else:
                 self.success_url = '/kids/salon/' + str(salon_id)
         return super(AlumnoCreateView, self).form_valid(form)
+
+
+
+class ClaseCreateView(CreateView):
+    form_class = ClaseForm
+    template_name = 'kids/view_new.html'
+    success_url = '/kids/clases'
+
+    def form_valid(self, form):
+        out = super(ClaseCreateView, self).form_valid(form)
+        instance = form.instance        
+        Guia(instance)
+        return out
+
+class ClaseUpdateView(UpdateView):    
+    model = Clase
+    form_class = ClaseForm
+    context_object_name = "clase"
+    success_url = '/kids/clases'
+
+    def form_valid(self, form):
+        out = super(ClaseUpdateView, self).form_valid(form)
+        form.save()
+        instance = form.instance
+        t = instance.preguntas
+        Guia(instance)
+        return out
+
+def compartir(request, pk):
+    emails = ['drm.electronic@gmail.com', 'pameladrm@gmail.com',
+    'robles.tim@gmail.com', 'brain248@hotmail.com', 'rrobles@econain.com',
+    'rrobertdan@gmail.com']
+    usuario = request.user.username.upper()
+    clase = Clase.objects.get(id=pk)
+    asunto = u'%s ha compartido la guía %s' % (usuario, clase.nombre)
+    texto =  u'La guía %s ya está lista para que la estudies.' % clase.nombre
+    archivos = (settings.MEDIA_ROOT + '/kids/guias/%d.pdf' % clase.id, )
+    enviar_correo(emails, asunto, texto, archivos)
+    return HttpResponseRedirect('/kids/clases')
+
+def enviar_correo(emails, asunto, texto, archivos):
+    msg = MIMEMultipart()
+    msg['Subject'] = asunto
+    msg['From'] = 'sistema@palabrayespiritu.org'
+    msg['To'] = ', '.join(emails)
+    msg.attach(MIMEText(texto, 'plain', 'UTF-8'))
+    if not archivos is None:
+        for archivo in archivos:
+            ctype, encoding = mimetypes.guess_type(archivo)
+            if ctype is None or encoding is not None:
+                # No guess could be made, or the file is encoded (compressed), so
+                # use a generic bag-of-bits type.
+                ctype = 'application/octet-stream'
+            maintype, subtype = ctype.split('/', 1)
+            fp = open(archivo, 'rb')
+            if maintype == 'text':
+                # Note: we should handle calculating the charset
+                adj = MIMEText(fp.read(), _subtype=subtype)
+            elif maintype == 'image':
+                adj = MIMEImage(fp.read(), _subtype=subtype)
+            elif maintype == 'audio':
+                adj = MIMEAudio(fp.read(), _subtype=subtype)
+            else:
+                adj = MIMEBase(maintype, subtype)
+                adj.set_payload(fp.read())
+                # Encode the payload using Base64
+                encoders.encode_base64(adj)
+            fp.close()
+            # Set the filename parameter
+            adj.add_header('Content-Disposition',
+                    'attachment',
+                    filename=os.path.basename(archivo))
+            msg.attach(adj)
+    # Autenticamos
+    mailServer = smtplib.SMTP('smtp.gmail.com', 587)
+    mailServer.ehlo()
+    mailServer.starttls()
+    mailServer.ehlo()
+    mailServer.set_debuglevel(1)
+    mailServer.login('sistema@palabrayespiritu.org', servidor.claves.mail)
+    # Enviamos
+    mailServer.sendmail('sistema@palabrayespiritu.org',
+        emails,
+        msg.as_string())
+    # Cerramos conexion
+    mailServer.close()

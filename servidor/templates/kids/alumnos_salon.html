@@ -14,17 +14,28 @@
         </td>
         <td>
             <a href="/kids/asistencia?alumno={{alumno.id}}">
-                {{ alumno.user }}
-            </a>
+                {{ alumno }}
+            </a></br> Pts: {{alumno.puntos}}
         </td>
         <td>
             {% if alumno.asistio %}
-                Si
+            <form method="POST"
+            action="/kids/punto?asistencia={{alumno.asistencia.id}}&next=/kids/salon/{{salon}}">
+            {% csrf_token %}
+            <input type="submit" value="+1">
+            <select name="motivo">
+                {% for motivo in motivos %}
+                <option value="{{motivo.id}}">
+                    {{ motivo.nombre }}
+                </option>
+                {% endfor %}
+            </select>
+            </form>
             {% else %}
-                No
-            {% endif %}
-        </td>
-        <td>
+                <a href="/kids/asistencia?alumno={{alumno.id}}">
+                <img src="/static/png/kids/x.png" width=16px>
+            </a>
+            {% endif %}</br>
             <a href="/kids/alumnos/editar/{{alumno.id}}">
                 Detalles
             </a>
