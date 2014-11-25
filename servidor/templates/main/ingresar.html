@@ -3,6 +3,7 @@
 {% block titulo %}Ingresar{% endblock %}
 {% block encabezado %}Ingresar{% endblock %}
 {% block contenido %}
+    {{ error }}
     <form id='formulario' method='post' action=''>
         {% csrf_token %}
         <table>{{ formulario }}</table>

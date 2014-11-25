@@ -34,18 +34,23 @@ def ingresar(request):
                     return HttpResponseRedirect(success)
                 else:
                     return render_to_response(
-                        'main/noactivo.html',
+                        'main/ingresar.html',
+                        {'formulario': formulario,
+                        'error': 'Usuario Inactivo consulte al webmaster.'},
                         context_instance=RequestContext(request)
                     )
             else:
                 return render_to_response(
-                    'main/nousuario.html',
+                    'main/ingresar.html',
+                    {'formulario': formulario,
+                    'error': 'Error en el usuario o contraseña.'},
                     context_instance=RequestContext(request)
                 )
     else:
         formulario = AuthenticationForm()
     return render_to_response(
         'main/ingresar.html',
-        {'formulario': formulario},
+        {'formulario': formulario,
+        'error': ''},
         context_instance=RequestContext(request)
     )

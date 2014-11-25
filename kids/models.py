@@ -12,7 +12,7 @@ import os
 class Salon(models.Model):
     desde = models.PositiveSmallIntegerField()
     hasta = models.PositiveSmallIntegerField()
-    parque = models.BooleanField()
+    parque = models.BooleanField(default=False)
 
     def __unicode__(self):
         return str(self.desde) + ' - ' + str(self.hasta)
@@ -56,8 +56,8 @@ class Alumno(models.Model):
     relacion = models.ForeignKey(ApoderadoTipo)
     telefono = models.CharField(max_length=10, null=True, default=None)
     foto = models.ImageField(upload_to='alumnos')
-    parque = models.BooleanField()
-    ed = models.BooleanField()
+    parque = models.BooleanField(default=False)
+    ed = models.BooleanField(default=False)
     ingreso = models.DateField(auto_now=True)
     observacion = models.CharField(max_length=256, null=True, blank=True)
 
@@ -148,7 +148,7 @@ class Asistencia(models.Model):
     alumno = models.ForeignKey(Alumno)
     dia = models.DateField(auto_now=True)
     profesor = models.ForeignKey(UserProfile)
-    parque = models.BooleanField()
+    parque = models.BooleanField(default=False)
 
     def __unicode__(self):
         return self.alumno + ': ' + str(self.dia)
